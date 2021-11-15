@@ -233,8 +233,7 @@ div.decor a:hover:after {
 }
 
 .profile__hello {
-	margin: 20px auto;
-	display: -ms-grid;
+	-webkit-display: -ms-grid;
 	display: grid;
 	-ms-grid-row: 1;
 	-ms-grid-column: 1;
@@ -245,6 +244,7 @@ div.decor a:hover:after {
 	border: 1px solid #89cff0;
 	border-radius: 5px;
 	text-align: center;
+	margin: 20px auto;
 }
 
 .profile__hello:hover {
@@ -254,7 +254,7 @@ div.decor a:hover:after {
 }
 
 .body__profile {
-	display: -ms-grid;
+	-webkit-display: -ms-grid;
 	display: grid;
 	-ms-grid-columns: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
@@ -313,7 +313,7 @@ div.decor a:hover:after {
 }
 
 .grid {
-	display: -ms-grid;
+	-webkit-display: -ms-grid;
 	display: grid;
 	-ms-grid-columns: 1fr 20px 1fr 20px 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
