@@ -1,6 +1,5 @@
 body {
-	font-family: 'Ubuntu', sans-serif, serif;
-	-webkit-src: url(https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap);
+	font-family: 'ubuntulight_italic', sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.6;
@@ -32,7 +31,7 @@ button {
 	width: 225px;
 	height: 40px;
 	border-radius: 30%;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'ubuntulight_italic', sans-serif;
 	background-color: #357b70;
 	color: white;
 	text-decoration: none;
@@ -52,7 +51,7 @@ button {
 	width: 225px;
 	height: 40px;
 	border-radius: 30%;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'ubuntulight_italic', sans-serif;
 	background-color: #357b70;
 	color: white;
 	text-decoration: none;
@@ -146,9 +145,7 @@ hr {
 }
 
 .page-header__item {
-	-webkit-box-flex: 0;
-	    -ms-flex: 0 1 200;
-	        -ms-flex: 0 1 200;
+	-ms-flex: 0 1 200;
 }
 
 .page-header__item:nth-child(1) {
@@ -174,7 +171,7 @@ hr {
 
 div.nav a {
 	text-decoration: none;
-	font: 20px 'Ubuntu', sans-serif;
+	font: 20px 'ubuntulight_italic', sans-serif;
 	z-index: 0;
 	position: relative;
 	cursor: pointer;
@@ -234,7 +231,8 @@ div.decor a:hover:after {
 }
 
 .profile__hello {
-	-webkit-display: -ms-grid;
+	margin: 20px auto;
+	display: -ms-grid;
 	display: grid;
 	-ms-grid-row: 1;
 	-ms-grid-column: 1;
@@ -245,7 +243,6 @@ div.decor a:hover:after {
 	border: 1px solid #89cff0;
 	border-radius: 5px;
 	text-align: center;
-	margin: 20px auto;
 }
 
 .profile__hello:hover {
@@ -255,7 +252,7 @@ div.decor a:hover:after {
 }
 
 .body__profile {
-	-webkit-display: -ms-grid;
+	display: -ms-grid;
 	display: grid;
 	-ms-grid-columns: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
@@ -314,7 +311,7 @@ div.decor a:hover:after {
 }
 
 .grid {
-	-webkit-display: -ms-grid;
+	display: -ms-grid;
 	display: grid;
 	-ms-grid-columns: 1fr 20px 1fr 20px 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -482,6 +479,14 @@ div.decor a:hover:after {
 
 /*KeyFrames*/
 
+@font-face {
+    font-family: 'ubuntulight_italic';
+    src: url('ubuntu-lightitalic-webfont.woff2') format('woff2'),
+         url('ubuntu-lightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @-webkit-keyframes wind-top {
 	from {
 		-webkit-transform: translate(400px);
@@ -537,7 +542,7 @@ div.decor a:hover:after {
 	}
 }
 
-@keyframes wind-right {
+@-webkit-keyframes wind-right {
 	from {
 		-webkit-transform: translate(500px, 300px);
 		        transform: translate(500px, 300px);
@@ -545,18 +550,6 @@ div.decor a:hover:after {
 	to {
 		-webkit-transform: translate(1100px, 300px);
 		        transform: translate(1100px, 300px);
-	}
-}
-
-@-webkit-keyframes color-change {
-	0% {
-		fill: #357b70;
-	}
-	50% {
-		fill: #89cff0;
-	}
-	100% {
-		fill: black;
 	}
 }
 
