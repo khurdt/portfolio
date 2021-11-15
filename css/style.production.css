@@ -1,13 +1,6 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.3.6,
-* Autoprefixer: v10.3.1
-* Browsers: last 4 version
-*/
-
 body {
 	font-family: 'Ubuntu', sans-serif;
-	font-weight: 400px;
+	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.6;
 	background-color: #c6c6c6;
@@ -154,7 +147,7 @@ hr {
 .page-header__item {
 	-webkit-box-flex: 0;
 	    -ms-flex: 0 1 200;
-	        flex: 0 1 200;
+	        -ms-flex: 0 1 200;
 }
 
 .page-header__item:nth-child(1) {
@@ -566,7 +559,7 @@ div.decor a:hover:after {
 	}
 }
 
-@keyframes color-change {
+@-webkit-keyframes color-change {
 	0% {
 		fill: #357b70;
 	}

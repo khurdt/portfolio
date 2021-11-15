@@ -5,7 +5,7 @@
 --tertiary-color: black; /*lightgreen*/
 --background-color: #c6c6c6; /*lightgrey*/
 --button-font: white;
---primary-fontweight: 400px;
+--primary-fontweight: 400;
 --primary-fontsize: 16px;
 --primary-fontfamily: 'Ubuntu', sans-serif;
 --primary-margin: 20px auto; /*index only*/
@@ -112,7 +112,7 @@ hr {
 }
 
 .page-header__item {
-	flex: 0 1 200;
+	-ms-flex: 0 1 200;
 }
 
 .page-header__item:nth-child(1) {
@@ -412,7 +412,7 @@ div.decor a:hover:after {
 	}
 }
 
-@keyframes color-change {
+@-webkit-keyframes color-change {
 	0% {
 		fill: var(--primary-color);
 	}
