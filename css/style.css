@@ -1,3 +1,4 @@
+
 :root {
 --primary-color: #357b70; /*green*/
 --secondary-color: #89cff0; /*blue*/
@@ -383,14 +384,6 @@ div.decor a:hover:after {
 }
 
 /*KeyFrames*/
-
-@font-face {
-    font-family: 'ubuntulight_italic';
-    src: url('ubuntu-lightitalic-webfont.woff2') format('woff2'),
-         url('ubuntu-lightitalic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @keyframes wind-top {
 	from {

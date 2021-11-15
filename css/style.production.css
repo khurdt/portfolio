@@ -145,7 +145,9 @@ hr {
 }
 
 .page-header__item {
-	-ms-flex: 0 1 200;
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 1 200;
+	        -ms-flex: 0 1 200;
 }
 
 .page-header__item:nth-child(1) {
@@ -534,7 +536,7 @@ div.decor a:hover:after {
 	}
 }
 
-@-webkit-keyframes wind-right {
+@keyframes wind-right {
 	from {
 		-webkit-transform: translate(500px, 300px);
 		        transform: translate(500px, 300px);
@@ -542,6 +544,18 @@ div.decor a:hover:after {
 	to {
 		-webkit-transform: translate(1100px, 300px);
 		        transform: translate(1100px, 300px);
+	}
+}
+
+@-webkit-keyframes color-change {
+	0% {
+		fill: #357b70;
+	}
+	50% {
+		fill: #89cff0;
+	}
+	100% {
+		fill: black;
 	}
 }
 
