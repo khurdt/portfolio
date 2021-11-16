@@ -9,7 +9,7 @@
 --primary-fontsize: 16px;
 --primary-fontfamily: 'Ubuntu', sans-serif;
 --primary-margin: 20px auto; /*index only*/
---spin-seconds: 0s;
+--spin-seconds: 10s;
 }
 
 
