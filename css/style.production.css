@@ -399,15 +399,35 @@ div.decor a:hover:after {
 
 @media all and (max-width: 400px) {
 	.texaslandscape {
-		width: 400px;
+		width: 350px;
 		height: 400px;
+	}
+	textarea {
+		max-width: 325px;
+	}
+	input {
+		max-width: 325px;
+	}
+}
+@media all and (min-width: 400px) and (max-width: 450px) {
+	textarea {
+		max-width: 375px;
+	}
+	input {
+		max-width: 375px;
 	}
 }
 
-@media all and (min-width: 400px) and (max-width: 500px) {
+@media all and (min-width: 450px) and (max-width: 500px) {
 	.texaslandscape {
 		width: 450px;
 		height: 400px;
+	}
+	textarea {
+		max-width: 425px;
+	}
+	input {
+		max-width: 425px;
 	}
 }
 
@@ -443,7 +463,16 @@ div.decor a:hover:after {
 		font-size: 20px;
 	}
 	h3 {
-		font-size: 10px;
+		font-size: 17px;
+	}
+}
+
+@media all and (min-width: 500px) and (max-width: 550px) {
+	textarea {
+		max-width: 450px;
+	}
+	input {
+		max-width: 450px;
 	}
 }
 
