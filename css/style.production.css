@@ -192,7 +192,7 @@ hr {
 	-ms-flex-item-align: end;
 	    align-self: flex-end;
 	text-align: right;
-	margin: auto;
+	margin: 10px auto;
 }
 
 .navigation-list {
