@@ -1,9 +1,9 @@
 body {
 	font-family: 'Ubuntu', sans-serif;
-	font-weight: 400;
+	font-weight: 600;
 	font-size: 16px;
 	line-height: 1.6;
-	background-color: #c6c6c6;
+	background-color: #c8d8e4;
 }
 
 * {
@@ -71,7 +71,7 @@ button:hover, button:focus, .button:hover, .button:focus {
 }
 
 a {
-	color: #357b70;
+	color: white;
 }
 
 a:visited {
@@ -138,9 +138,9 @@ hr {
 }
 
 .page__title {
-	margin: 20px auto;
+	margin: auto;
 	width: auto;
-	max-width: 200px;
+	max-width: 150px;
 	font-size: 17px;
 	color: white;
 	background-color: #357b70;
@@ -152,7 +152,7 @@ hr {
 }
 
 .container {
-	margin: 20px auto;
+	margin: auto;
 }
 
 .page-header {
@@ -192,7 +192,7 @@ hr {
 	-ms-flex-item-align: end;
 	    align-self: flex-end;
 	text-align: right;
-	margin: 20px auto;
+	margin: auto;
 }
 
 .navigation-list {
@@ -202,6 +202,7 @@ hr {
 div.nav a {
 	text-decoration: none;
 	font: 20px 'Ubuntu', sans-serif;
+	font-weight: 600;
 	z-index: 0;
 	position: relative;
 	cursor: pointer;
@@ -266,12 +267,12 @@ div.decor a:hover:after {
 	-ms-grid-columns: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
 	max-width: 700px;
-	margin: 20px auto;
+	margin: auto;
 }
 
 .profile__item {
 	text-align: center;
-	margin: 20px auto;
+	margin: auto;
 }
 
 .profile__item:first-child {
@@ -300,10 +301,11 @@ div.decor a:hover:after {
 /*aboutme css*/
 
 .aboutme__tables {
+	padding: 20px;
 }
 
 .aboutme__item:nth-child(1) {
-	margin: 20px auto;
+	margin: auto;
 	width: auto;
 	max-width: 300px;
 	text-align: center;
@@ -341,8 +343,9 @@ div.decor a:hover:after {
 }
 
 .grid__item {
-	background-color: #89cff0;
-	border: 2px solid #89cff0;
+	background-color: #357b70;
+	border: 2px solid #357b70;
+	color: white;
 	border-radius: 10px;
 	width: auto;
 }
@@ -371,7 +374,7 @@ div.decor a:hover:after {
 	display: grid;
 	-ms-grid-columns: 50% 10px 50%;
 	grid-template-columns: 50% 50%;
-	margin: 20px auto;
+	margin: auto;
 	width: auto;
 	max-width: 500px;
 	grid-gap: 10px;
