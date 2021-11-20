@@ -384,7 +384,7 @@ div.grid a {
 	grid-template-columns: 50% 50%;
 	margin: auto;
 	width: auto;
-	max-width: 520px;
+	max-width: 500px;
 	grid-gap: 10px;
 	-ms-grid-columns: 1fr;
 	grid-template-columns: 1fr;
@@ -396,6 +396,7 @@ div.grid a {
 
 .contact__item:nth-child(6) {
 	text-align: center;
+	padding-right: 15px;
 }
 
 /*Media Query*/
@@ -408,24 +409,37 @@ div.grid a {
 	}
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 374px){
 	.texaslandscape {
 		width: 310px;
 		height: 400px;
 	}
 	textarea {
-		max-width: 300px;
+		max-width: 320px;
 	}
 	input {
-		max-width: 300px;
+		max-width: 320px;
+	}
+}
+
+@media all and (min-width: 375px) and (max-width: 400px) {
+	.texaslandscape {
+		width: 310px;
+		height: 400px;
+	}
+	textarea {
+		max-width: 350px;
+	}
+	input {
+		max-width: 350px;
 	}
 }
 @media all and (min-width: 400px) and (max-width: 450px) {
 	textarea {
-		max-width: 355px;
+		max-width: 380px;
 	}
 	input {
-		max-width: 355px;
+		max-width: 380px;
 	}
 }
 
@@ -456,6 +470,13 @@ div.grid a {
 	}
 }
 
+@media all and (min-width: 800px) and (max-width: 1000px) {
+	.texaslandscape {
+		width: 660px;
+		height: 400px;
+	}
+}
+
 @media all and (max-width: 500px) {
 	.grid {
 		-ms-grid-columns: 1fr;
@@ -480,10 +501,10 @@ div.grid a {
 
 @media all and (min-width: 500px) and (max-width: 550px) {
 	textarea {
-		max-width: 430px;
+		max-width: 460px;
 	}
 	input {
-		max-width: 430px;
+		max-width: 460px;
 	}
 }
 
