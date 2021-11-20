@@ -282,6 +282,10 @@ div.decor a:hover:after {
 	        box-shadow: 4px 4px 6px 4px rgba(30, 50, 80, 0.30)
 }
 
+.profile__item:nth-child(2) {
+	float: right;
+}
+
 .footer {
 	text-align: center;
 	clear: both;
