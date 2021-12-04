@@ -20,8 +20,8 @@ submitButton.addEventListener('click', function(e) {
 		}
 
 	function addSpaces(initial){
-        initial.replace("/([0-9]{3})/","\1 ");
-        initial.replace("/[0-9]{3} ([0-9]{3})/","\1 ");
+        initial.replace("[0-9]{3}[d-][0-9]{3}");
+        initial.replace("[0-9]{3}[d-][0-9]{3}[d-][0-9]{4}");
         return initial;
     }
 })
