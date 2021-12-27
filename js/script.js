@@ -67,7 +67,7 @@
   function validatePhone() {
     let value = phoneInput.value;
 
-    if (value.length !== 10) {
+    if (value.length !== 9) {
       showErrorMessage(phoneInput, '*Enter a valid phone number');
       return false;
     };
