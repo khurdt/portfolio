@@ -3,7 +3,7 @@ body {
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 1.6;
-	background-color: #92DEEC;
+	background-color: #a0caf1;
 	margin: auto;
 }
 
@@ -382,6 +382,15 @@ div.decor a:hover:after {
 	text-align: center;
 }
 
+@media all and (max-width: 450px) {
+	.contact__item {
+		padding-left: 15px;
+	}
+	.contact__item:nth-child(6) {
+		padding-right: 15px;
+	}
+}
+
 /*Media Query*/
 @media all and (max-width: 400px) {
 	.navigation-list__item {
@@ -396,6 +405,20 @@ div.decor a:hover:after {
 	.body__profile {
 		-ms-grid-columns: 1fr;
 		grid-template-columns: 1fr;
+	}
+}
+
+@media all and (max-width: 675px) {
+	.about-info {
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+	}
+	.aboutme__cv {
+		margin: auto;
+		padding: 0px;
+	}
+	.aboutme__tables:nth-child(1) {
+		margin: auto;
 	}
 }
 
