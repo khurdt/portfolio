@@ -31,7 +31,7 @@ button {
 	height: 40px;
 	border-radius: 30%;
 	font-family: 'Ubuntu', sans-serif;
-	background-color: #53CAE1;
+	background-color: #51a2ca;
 	color: black;
 	text-decoration: none;
 	padding: 10px;
@@ -51,7 +51,7 @@ button {
 	height: 40px;
 	border-radius: 30%;
 	font-family: 'Ubuntu', sans-serif;
-	background-color: #53CAE1;
+	background-color: #51a2ca;
 	color: black;
 	text-decoration: none;
 	padding: 10px;
@@ -133,7 +133,7 @@ hr {
 	max-width: 150px;
 	font-size: 17px;
 	color: black;
-	background-color: #19B6D5;
+	background-color: #448caf;
 	border: 2px solid #89cff0;
 	border-radius: 5px;
 	text-align: center;
@@ -146,7 +146,7 @@ hr {
 }
 
 .page-header {
-	background-color: #19B6D5;
+	background-color: #448caf;
 	display: grid;
 	grid-template-columns: 10% 90%;
 	position: sticky;
@@ -325,7 +325,7 @@ div.decor a:hover:after {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 20px;
 	padding: 10px;
-	border: 1px solid #53CAE1;
+	border: 1px solid #448caf;
 	border-radius: 10px;
 	-webkit-box-shadow: 4px 4px 6px 4px rgba(30, 50, 80, 0.30);
 	        box-shadow: 4px 4px 6px 4px rgba(30, 50, 80, 0.30);
