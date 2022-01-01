@@ -4,7 +4,9 @@ body {
 	font-size: 16px;
 	line-height: 1.6;
 	background-color: #a0caf1;
-	margin: auto;
+	margin:0;
+	padding:0;
+	height:100%;
 }
 
 * {
@@ -79,6 +81,7 @@ a:hover, a:focus {
 }
 
 table {
+	background: white;
 	text-align: center;
 	border: 3px solid black;
 	border-radius: 5px;
@@ -125,24 +128,14 @@ hr {
 	clear: both;
 }
 
-/*index css*/
-
-.page__title {
-	margin: 10px auto;
-	width: auto;
-	max-width: 150px;
-	font-size: 17px;
-	color: black;
-	background-color: #448caf;
-	border: 2px solid #89cff0;
-	border-radius: 5px;
-	text-align: center;
-	-webkit-animation: fadeinup 1s 1;
-	        animation: fadeinup 1s 1;
-}
-
 .container {
 	margin: auto;
+}
+
+/*index css-----------------------------------------------------*/
+
+.index__container {
+	padding-top: 50px;
 }
 
 .page-header {
@@ -234,6 +227,20 @@ div.decor a:hover:after {
 	margin-right: 20px;
 }
 
+.page__title {
+	margin: 10px auto;
+	width: auto;
+	max-width: 150px;
+	font-size: 17px;
+	color: black;
+	background-color: #448caf;
+	border: 2px solid #89cff0;
+	border-radius: 5px;
+	text-align: center;
+	-webkit-animation: fadeinup 1s 1;
+	        animation: fadeinup 1s 1;
+}
+
 .body__profile {
 	-webkit-display: -ms-grid;
 	display: grid;
@@ -264,23 +271,38 @@ div.decor a:hover:after {
 	float: right;
 }
 
-.footer {
+.profile__description {
+	padding-top: 20px;
+}
+
+footer {
 	text-align: center;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-	padding-top: 10px;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: #448caf;
+	position: absolute;
+	bottom: 0;
+	padding: 0;
+	width:100%;
+	height: 100px;
 }
 
-/*aboutme css*/
+.footer__items img {
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
 
-.aboutme__tables {}
+/*aboutme css--------------------------------------------*/
 
-.aboutme__item {}
+.about__container {
+	padding-top: 50px;
+}
 
 .about-info {
 	display: grid;
@@ -306,16 +328,16 @@ div.decor a:hover:after {
 	margin-top: auto;
 	margin-bottom: auto;
 	padding-left: 40px;
-	padding-bottom: 20px;
 }
 
-/*work css*/
+.about__footer {
+	position: relative;
+}
 
-.grid__item {
-	display: inline-block;
-	width: 33%;
-	-webkit-box-shadow: 4px 4px 6px 4px rgba(30, 50, 80, 0.30);
-	        box-shadow: 4px 4px 6px 4px rgba(30, 50, 80, 0.30)
+/*work css--------------------------------------------------*/
+
+.work__container {
+	padding-top: 50px;
 }
 
 .grid {
@@ -324,16 +346,25 @@ div.decor a:hover:after {
 	-ms-grid-columns: 1fr 20px 1fr 20px 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 20px;
-	padding: 10px;
+	padding: 20px;
 	border: 1px solid #448caf;
 	border-radius: 10px;
 	-webkit-box-shadow: 4px 4px 6px 4px rgba(30, 50, 80, 0.30);
 	        box-shadow: 4px 4px 6px 4px rgba(30, 50, 80, 0.30);
-	max-width: 60%;
-	margin-left: 20%;
+	max-width: 80%;
+	margin: auto;
+}
+
+.grid__item p {
+	padding: 10px;
+	padding-bottom: 0px;
 }
 
 .grid__item {
+	display: inline-block;
+	width: 33%;
+	-webkit-box-shadow: 4px 4px 6px 4px rgba(30, 50, 80, 0.30);
+					box-shadow: 4px 4px 6px 4px rgba(30, 50, 80, 0.30);
 	background-color: white;
 	border: 2px solid white;
 	color: black;
@@ -342,23 +373,31 @@ div.decor a:hover:after {
 	text-align: center;
 }
 
-.grid__item:nth-child(1) {
-	-ms-grid-column: 1;
+/* .grid__item:nth-child(1) {
 	grid-column: 1/1;
-	-ms-grid-row: 1;
-	-ms-grid-row-span: 2;
 	grid-row: 1/3;
 }
 
-.grid__item:nth-child(6) {
-	-ms-grid-column: 1;
-	-ms-grid-column-span: 3;
-	grid-column: 1/4;
-	-ms-grid-row: 3;
-	grid-row: 3/3;
+.grid__item:nth-child(2) {
+	grid-column: 2/2;
+	grid-row: 1/3;
+} */
+
+.grid__links {
+	display: flex;
+	flex-direction: column;
 }
 
-/*contact css*/
+.github__link {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/*contact css------------------------------------*/
+
+.contact__container {
+	padding-top: 50px;
+}
 
 .contact {
 	font-size: 18px;
@@ -382,45 +421,7 @@ div.decor a:hover:after {
 	text-align: center;
 }
 
-@media all and (max-width: 450px) {
-	.contact__item {
-		padding-left: 15px;
-	}
-	.contact__item:nth-child(6) {
-		padding-right: 15px;
-	}
-}
-
-/*Media Query*/
-@media all and (max-width: 400px) {
-	.navigation-list__item {
-		margin-right: 7px;
-	}
-	.navigation-list {
-		margin-right: auto;
-	}
-}
-
-@media all and (max-width: 600px) {
-	.body__profile {
-		-ms-grid-columns: 1fr;
-		grid-template-columns: 1fr;
-	}
-}
-
-@media all and (max-width: 675px) {
-	.about-info {
-		grid-template-columns: 1fr;
-		grid-gap: 20px;
-	}
-	.aboutme__cv {
-		margin: auto;
-		padding: 0px;
-	}
-	.aboutme__tables:nth-child(1) {
-		margin: auto;
-	}
-}
+/*Media Query-------------------------------------------------*/
 
 @media all and (max-width: 374px){
 	.texaslandscape {
@@ -447,12 +448,31 @@ div.decor a:hover:after {
 		max-width: 350px;
 	}
 }
+
+@media all and (max-width: 400px) {
+	.navigation-list__item {
+		margin-right: 7px;
+	}
+	.navigation-list {
+		margin-right: auto;
+	}
+}
+
 @media all and (min-width: 400px) and (max-width: 450px) {
 	textarea {
 		max-width: 380px;
 	}
 	input {
 		max-width: 380px;
+	}
+}
+
+@media all and (max-width: 450px) {
+	.contact__item {
+		padding-left: 15px;
+	}
+	.contact__item:nth-child(6) {
+		padding-right: 15px;
 	}
 }
 
@@ -469,47 +489,7 @@ div.decor a:hover:after {
 	}
 }
 
-@media all and (min-width: 500px) and (max-width: 600px) {
-	.texaslandscape {
-		width: 460px;
-		height: 400px;
-	}
-}
-
-@media all and (min-width: 600px) and (max-width: 800px) {
-	.texaslandscape {
-		width: 660px;
-		height: 400px;
-	}
-}
-
-@media all and (min-width: 800px) and (max-width: 1000px) {
-	.texaslandscape {
-		width: 660px;
-		height: 400px;
-	}
-}
-
-@media all and (max-width: 600px) {
-	.page-header {
-		grid-template-columns: 1fr;
-	}
-}
-
 @media all and (max-width: 500px) {
-	.grid {
-		-ms-grid-columns: 1fr;
-		grid-template-columns: 1fr;
-		grid-gap: 10px;
-	}
-	.grid__item:first-child {
-		grid-column: auto;
-		grid-row: auto;
-	}
-	.grid__item:last-child {
-		grid-column: auto;
-		grid-row: auto;
-	}
 	h2 {
 		font-size: 20px;
 	}
@@ -527,7 +507,57 @@ div.decor a:hover:after {
 	}
 }
 
-@media all and (min-width: 500px) and (max-width: 750px) {
+@media all and (min-width: 500px) and (max-width: 600px) {
+	.texaslandscape {
+		width: 460px;
+		height: 400px;
+	}
+}
+
+@media all and (max-width: 600px) {
+	.body__profile {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
+	.page-header {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media all and (max-width: 675px) {
+	.about-info {
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+	}
+	.aboutme__cv {
+		margin: auto;
+		padding: 0px;
+	}
+	.aboutme__tables:nth-child(1) {
+		margin: auto;
+	}
+}
+
+@media all and (max-width: 1110px) {
+	.grid {
+		grid-template-columns: 1fr;
+		grid-gap: 10px;
+		margin-bottom: 20px;
+	}
+		.grid__item:first-child {
+		grid-column: auto;
+		grid-row: auto;
+	}
+	.grid__item:last-child {
+		grid-column: auto;
+		grid-row: auto;
+	}
+	.work__footer {
+		position: relative;
+	}
+}
+
+@media all and (min-width: 1110px) and (max-width: 1690px) {
 	.grid {
 		-ms-grid-columns: 1fr 10px 1fr;
 		grid-template-columns: 1fr 1fr;
@@ -546,7 +576,34 @@ div.decor a:hover:after {
 	}
 }
 
-/*SVG*/
+@media all and (min-width: 600px) and (max-width: 800px) {
+	.texaslandscape {
+		width: 660px;
+		height: 400px;
+	}
+}
+
+@media all and (min-width: 800px) and (max-width: 1000px) {
+	.texaslandscape {
+		width: 660px;
+		height: 400px;
+	}
+}
+
+@media all and (max-width: 700px) and (max-height: 950px) {
+	.contact__footer {
+		position: relative;
+	}
+	.index__footer {
+		position: relative;
+	}
+	.contact__item:nth-child(6) {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+}
+
+/*SVG----------------------------------------------------------------*/
 
 .rays {
 	-webkit-animation: color-change 5s alternate linear infinite;
@@ -573,7 +630,7 @@ div.decor a:hover:after {
 	        animation: color-change 5s alternate linear infinite;
 }
 
-/*KeyFrames*/
+/*KeyFrames------------------------------------------------------------*/
 
 @-webkit-keyframes fadeinup {
 	from {
