@@ -1,2 +1,2 @@
-# khurdt.github.io
- a website to show my portfolio
+# Portfolio/Website
+ website that will display my profile and projects
