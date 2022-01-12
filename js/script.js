@@ -1,11 +1,11 @@
 (function() {
   let form = document.querySelector('#register-form'),
-      emailInput = document.querySelector('#email'),
-      firstNameInput = document.querySelector('#first-name'),
-      lastNameInput = document.querySelector('#last-name'),
-      phoneInput = document.querySelector('#phone');
+    emailInput = document.querySelector('#email'),
+    firstNameInput = document.querySelector('#first-name'),
+    lastNameInput = document.querySelector('#last-name'),
+    phoneInput = document.querySelector('#phone');
 
-    function showErrorMessage(input, message) {
+  function showErrorMessage(input, message) {
     let container = input.parentElement;
 
     let error = container.querySelector('.error-message');
@@ -71,8 +71,8 @@
       return false;
     }
 
-      showErrorMessage(phoneInput, null);
-      return true;
+    showErrorMessage(phoneInput, null);
+    return true;
   }
 
   function addDashes() {
@@ -83,22 +83,22 @@
   }
 
   function validateForm() {
-   let goodEmail = validateEmail(),
-       goodFirstName = validateFirstName(),
-       goodLastName = validateLastName(),
-       goodPhone = validatePhone();
+    let goodEmail = validateEmail(),
+      goodFirstName = validateFirstName(),
+      goodLastName = validateLastName(),
+      goodPhone = validatePhone();
     return goodEmail && goodFirstName && goodLastName && goodPhone;
   }
-//Event Listeners
-	form.addEventListener('submit', (event) => {
+  //Event Listeners
+  form.addEventListener('submit', (event) => {
     event.preventDefault(); // Do not submit to the server
     if (validateForm()) {
       alert('Success!');
     }
   })
 
-	emailInput.addEventListener('input', validateEmail);
-	firstNameInput.addEventListener('input', validateFirstName);
+  emailInput.addEventListener('input', validateEmail);
+  firstNameInput.addEventListener('input', validateFirstName);
   lastNameInput.addEventListener('input', validateLastName);
   phoneInput.addEventListener('input', validatePhone);
   phoneInput.addEventListener('keyup', addDashes);
