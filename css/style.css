@@ -425,26 +425,15 @@ label {
 	}
 }
 
-@media all and (max-width: 675px) {
-	.about-info {
-		grid-template-columns: 1fr;
-		grid-gap: 20px;
-	}
-	.aboutme__cv {
-		margin: auto;
-		padding: 0px;
-	}
-}
-
 @media all and (max-width: 1110px) {
 	.grid {
 		grid-template-columns: 1fr;
 		grid-gap: 10px;
 		margin-bottom: 20px;
 	}
-		.grid__item:first-child {
-		grid-column: auto;
-		grid-row: auto;
+	.grid__item:first-child {
+	grid-column: auto;
+	grid-row: auto;
 	}
 	.grid__item:last-child {
 		grid-column: auto;
@@ -458,9 +447,9 @@ label {
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 10px;
 	}
-		.grid__item:first-child {
-		grid-column: auto;
-		grid-row: auto;
+	.grid__item:first-child {
+	grid-column: auto;
+	grid-row: auto;
 	}
 	.grid__item:last-child {
 		grid-column: auto;
@@ -491,6 +480,16 @@ label {
 		margin-bottom: 20px;
 	}
 }
+ @media all and (max-width: 830px) {
+ 	table {
+ 		width: auto;
+ 		height: auto;
+ 	}
+ 	.aboutme__item:nth-child(1) {
+ 		padding: 10px;
+ 		margin: auto;
+ 	}
+ }
 
 /*KeyFrames------------------------------------------------------------*/
 
