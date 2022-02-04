@@ -219,21 +219,23 @@ footer {
 
 .about-info {
 	display: grid;
-	grid-template-columns: 60%;
+	grid-template-columns: 1fr;
+	grid-gap: 30px;
 }
 
 .aboutme__item:nth-child(1) {
 	margin: auto;
-	padding-left: 100px;
-	text-align: center;
+	max-width: 500px;
 	padding-top: 20px;
 }
 
 .aboutme__item:nth-child(2) {
-	margin: auto;
-	padding-left: 100px;
 	text-align: center;
-	padding-top: 20px;
+	margin: auto;
+}
+
+.aboutme__item:nth-child(3) {
+	margin: auto;
 }
 
 table {
@@ -492,6 +494,9 @@ label {
 	}
 	.page-header {
 		grid-template-columns: 1fr;
+	}
+	.aboutme__item:nth-child(1) {
+		max-width: 300px;
 	}
 }
 
