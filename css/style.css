@@ -366,13 +366,13 @@ td {
 	display: grid;
 	grid-template-columns: 1fr;
 	padding: 20px;
-	max-width: 50%;
+	max-width: 1400px;
 	margin: auto;
 }
 
 .grid__item {
 	width: 33%;
-	height: 330px;
+	height: 600px;
 	box-shadow: 4px 4px 6px 4px rgba(30, 50, 80, 0.30);
 	background-color: white;
 	background-size: 100%;
@@ -470,9 +470,9 @@ label {
 }
 
 @media all and (max-width: 500px) {
-	.grid__item {
+/*	.grid__item {
 		height: 50px;
-	}
+	}*/
 	h2 {
 		font-size: 20px;
 	}
@@ -529,7 +529,7 @@ label {
 	}
 }
 
-@media all and (max-width: 460px) {
+@media all and (max-width: 465px) {
 	.modal-item:nth-child(1) {
 		max-width: 200px;
 		max-height: 200px;
@@ -556,23 +556,26 @@ label {
 	.modal-list {
 		grid-template-columns: 1fr;
 	}
-}
-
-@media all and (min-width: 716px) and (max-width: 1109px) {
 	.grid__item {
-		height: 150px;
+		height: 125px;
 	}
 }
 
-@media all and (min-width: 500px) and (max-width: 715px) {
+@media all and (min-width: 692px) and (max-width: 999px) {
 	.grid__item {
-		height: 100px;
+		height: 300px;
 	}
 }
 
-@media all and (min-width: 1110px) and (max-width: 1500px) {
+@media all and (min-width: 466px) and (max-width: 691px) {
 	.grid__item {
-		height: 250px;
+		height: 200px;
+	}
+}
+
+@media all and (min-width: 1000px) and (max-width: 1337px) {
+	.grid__item {
+		height: 420px;
 	}
 	h2 {
 		font-size: 20px;
