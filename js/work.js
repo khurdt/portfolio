@@ -5,23 +5,23 @@ let work = (function () {
       name: 'Pokedex App',
       github: 'https://github.com/khurdt/pokedex.github.io',
       view: 'https://khurdt.github.io/pokedex.github.io/',
-      description: 'App that fetches pokemon from an API and displays its image and information within a modal.',
+      description: 'An app that fetches pokemon from an API and displays its image and information within a modal.',
       img: './images/pokedex.png',
       modalimg: './images/venusaur.png'
     },
     {
       name: 'Drawing App',
       github: 'github__link" href="https://github.com/khurdt/drawing.app.github.io',
-      view: 'https://khurdt.github.io/drawing.app.github.io/',
-      description: 'App for drawing on a blank canvas with different colors, multiple width sizes, and mirror or quardrant lines.',
+      view: 'https://khurdt.github.io/drawing-app.github.io/',
+      description: 'An app for drawing on a blank canvas with different colors, multiple width sizes, and mirror or quardrant lines.',
       img: './images/drawing.png',
       modalimg: './images/color1.png'
     },
     {
       name: 'To Do List App',
       github: 'github__link" href="https://github.com/khurdt/to-do-list.app.github.io',
-      view: 'https://khurdt.github.io/to-do-list.app.github.io/',
-      description: 'App that displays a list from the provided input and allows you to highlight, cross out, or delete items.',
+      view: 'https://khurdt.github.io/to-do-list-app.github.io/',
+      description: 'An app that displays a list from the provided input and allows you to highlight, cross out, or delete items.',
       img: './images/todolist.png',
       modalimg: './images/todolist (1).png'
     }
