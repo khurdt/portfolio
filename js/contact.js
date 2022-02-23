@@ -1,4 +1,4 @@
-(function() {
+(function () {
   let form = document.querySelector('#register-form'),
     emailInput = document.querySelector('#email'),
     firstNameInput = document.querySelector('#first-name'),
@@ -10,7 +10,7 @@
 
     let error = container.querySelector('.error-message');
 
-    if(error) {
+    if (error) {
       container.removeChild(error);
     }
 
@@ -25,7 +25,7 @@
   function validateFirstName() {
     let value = firstNameInput.value;
 
-    if(!value) {
+    if (!value) {
       showErrorMessage(firstNameInput, '*First name is required')
       return false;
     }
@@ -37,7 +37,7 @@
   function validateLastName() {
     let value = lastNameInput.value;
 
-    if(!value) {
+    if (!value) {
       showErrorMessage(lastNameInput, '*Last name is required')
       return false;
     }
