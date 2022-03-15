@@ -2,8 +2,20 @@ let work = (function () {
 
   let projectList = [
     {
+      name: 'Movie Info React App',
+      github: 'https://github.com/khurdt/movie-app-api',
+      github2: 'https://github.com/khurdt/movie-app-client',
+      github2title: 'GitHub API',
+      view: 'https://kh-cinema-app.netlify.app/',
+      description: 'Built server and database using node, express, and mongo. Enjoyed creating endpoints and connecting them to the database. Also built client side using React and Redux. One of the difficulties or main cause of bugs was trying to pass props and functions without losing their state or loading them before page rendered. The other difficulty was how to keep all the data the same as different views updated.',
+      img: './images/movie-app.png',
+      modalimg: './images/lego.png'
+    },
+    {
       name: 'Pokedex App',
       github: 'https://github.com/khurdt/pokedex.github.io',
+      github2: 'https://khurdt.github.io/portfolio/work.html',
+      github2title: 'No API',
       view: 'https://khurdt.github.io/pokedex.github.io/',
       description: 'An app that fetches pokemon from an API and displays its image and information within a modal.',
       img: './images/pokedex.png',
@@ -12,6 +24,8 @@ let work = (function () {
     {
       name: 'Drawing App',
       github: 'github__link" href="https://github.com/khurdt/drawing.app.github.io',
+      github2: 'https://khurdt.github.io/portfolio/work.html',
+      github2title: 'No API',
       view: 'https://khurdt.github.io/drawing-app.github.io/',
       description: 'An app for drawing on a blank canvas with different colors, multiple width sizes, and mirror or quardrant lines.',
       img: './images/drawing.png',
@@ -20,6 +34,8 @@ let work = (function () {
     {
       name: 'To Do List App',
       github: 'github__link" href="https://github.com/khurdt/to-do-list.app.github.io',
+      github2: 'https://khurdt.github.io/portfolio/work.html',
+      github2title: 'No API',
       view: 'https://khurdt.github.io/to-do-list-app.github.io/',
       description: 'An app that displays a list from the provided input and allows you to highlight, cross out, or delete items.',
       img: './images/todolist.png',
@@ -79,12 +95,20 @@ let work = (function () {
     let viewLink = document.createTextNode("See Project Now");
     projectLink.appendChild(viewLink);
     projectLink.href = project.view;
+    projectLink.target = '_blank';
 
     let githubLink = document.createElement('a');
     githubLink.classList.add('modal-item');
     let gitLink = document.createTextNode("See GitHub");
     githubLink.appendChild(gitLink);
     githubLink.href = project.github;
+    githubLink.target = '_blank';
+
+    let githubLink2 = document.createElement('a');
+    githubLink2.classList.add('modal-item');
+    githubLink2.innerText = project.github2title;
+    githubLink2.href = project.github2;
+    githubLink2.target = '_blank';
 
     let paragraph = document.createElement('p');
     paragraph.classList.add('modal-item');
@@ -92,6 +116,7 @@ let work = (function () {
 
     listDetails.appendChild(modalImg);
     listDetails.appendChild(paragraph);
+    listDetails.appendChild(githubLink2);
     listDetails.appendChild(projectLink);
     listDetails.appendChild(githubLink);
     modal.appendChild(closeIcon);
