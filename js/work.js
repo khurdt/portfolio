@@ -4,8 +4,6 @@ let work = (function () {
     {
       name: 'Movie Info React App',
       github: 'https://github.com/khurdt/movie-app-api',
-      github2: 'https://github.com/khurdt/movie-app-client',
-      github2title: 'GitHub API',
       view: 'https://kh-cinema-app.netlify.app/',
       description: 'Built server and database using node, express, and mongo. Enjoyed creating endpoints and connecting them to the database. Also built client side using React and Redux. One of the difficulties or main cause of bugs was trying to pass props and functions without losing their state or loading them before page rendered. The other difficulty was how to keep all the data the same as different views updated.',
       img: './images/movie-app.png',
@@ -104,19 +102,12 @@ let work = (function () {
     githubLink.href = project.github;
     githubLink.target = '_blank';
 
-    let githubLink2 = document.createElement('a');
-    githubLink2.classList.add('modal-item');
-    githubLink2.innerText = project.github2title;
-    githubLink2.href = project.github2;
-    githubLink2.target = '_blank';
-
     let paragraph = document.createElement('p');
     paragraph.classList.add('modal-item');
     paragraph.innerText = project.description;
 
     listDetails.appendChild(modalImg);
     listDetails.appendChild(paragraph);
-    listDetails.appendChild(githubLink2);
     listDetails.appendChild(projectLink);
     listDetails.appendChild(githubLink);
     modal.appendChild(closeIcon);
