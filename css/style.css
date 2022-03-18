@@ -327,7 +327,7 @@ td {
 .modal-item:nth-child(1) {
 	max-width: 300px;
 	height: 250px;
-	grid-column: 1/1;
+	grid-column: 1/3;
 	grid-row: 1/1;
 	margin: auto;
 }
@@ -341,15 +341,13 @@ td {
 }
 
 .modal-item:nth-child(3) {
-	margin-bottom: 20px;
-	grid-column: 2/2;
-	grid-row: 1/1;
+	grid-column: 1/1;
+	grid-row: 2/2;
 }
 
 .modal-item:nth-child(4) {
-	margin-top: 20px;
 	grid-column: 2/2;
-	grid-row: 1/1;
+	grid-row: 2/2;
 }
 
 .work__title {
@@ -372,7 +370,6 @@ td {
 }
 
 .grid__item {
-	width: 33%;
 	height: 430px;
 	box-shadow: 4px 4px 6px 4px rgba(30, 50, 80, 0.30);
 	background-color: white;
@@ -509,7 +506,7 @@ label {
 	.modal-item:nth-child(1) {
 		max-width: 300px;
 		height: 100px;
-		grid-column: auto;
+		grid-column: 1/3;
 		grid-row: auto;
 	}
 
@@ -517,23 +514,22 @@ label {
 		font-size: 25px;
 		margin: auto;
 		height: 30px;
-		grid-column: auto;
+		grid-column: 1/3;
 		grid-row: 4/4;
 	}
 	.modal-item:nth-child(3) {
+		margin: auto;
 		grid-column: 1/1;
 		grid-row: 2/2;
 	}
+
 	.modal-item:nth-child(4) {
+		margin: auto;
 		grid-column: 2/2;
 		grid-row: 2/2;
 	}
-	.modal-item:nth-child(5) {
-		grid-column: 3/3;
-		grid-row: 2/2;
-	}
 	.modal-list {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
 	.modal-list a {
 		font-size: 10px;
@@ -545,31 +541,34 @@ label {
 
 @media all and (max-width: 465px) {
 	.modal-item:nth-child(1) {
-		max-width: 100px;
-		max-height: 100px;
-		grid-column: auto;
+		max-width: 80px;
+		max-height: 80px;
+		grid-column: 1/2;
 		grid-row: auto;
+		margin: auto;
 	}
 
 	.modal-item:nth-child(2) {
 		font-size: 15px;
 		margin: auto;
 		height: 30px;
-		grid-column: auto;
+		grid-column: 1/3;
 		grid-row: 4/4;
 	}
 	.modal-item:nth-child(3) {
-		grid-column: auto;
-		grid-row: auto;
+		margin: auto;
+		grid-column: 2/2;
+		grid-row: 2/2;
 	}
 
 	.modal-item:nth-child(4) {
-		grid-column: auto;
-		grid-row: auto;
+		margin: auto;
+		grid-column: 1/1;
+		grid-row: 2/2;
 	}
 
 	.modal-list {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
 	.grid__item {
 		height: 125px;
