@@ -6,8 +6,8 @@ let work = (function () {
       github: 'https://github.com/khurdt/meet-app',
       view: 'https://khurdt.github.io/meet-app/',
       description: 'an App to see events in specific cities',
-      img: '',
-      modalimg: ''
+      img: './images/coming-soon.png',
+      modalimg: './images/coming-soon.png'
     },
     {
       name: 'Movie Info React App',
