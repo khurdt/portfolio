@@ -1,9 +1,30 @@
 (function () {
+  //email serverless function
+  const aws = require('aws-sdk');
+  const nodemailer = require('nodemailer');
+  const ses = new aws.SES();
+
+  exports.handler = (event) => {
+    const mailOptions = {
+      from: emailInput.event.value,
+      to: 'joshuahurdt@gmail.com',
+      name: ('' + firstNameInput.event.value + ' ' + lastNameInput + ''),
+      phone: phoneInput.event.value,
+      text: bodyInput.event.value,
+    };
+    const transporter = nodemailer.createTransport({
+      SES: ses
+    });
+    transporter.sendMail(mailOptions);
+  }
+
+  //input validation
   let form = document.querySelector('#register-form'),
     emailInput = document.querySelector('#email'),
     firstNameInput = document.querySelector('#first-name'),
     lastNameInput = document.querySelector('#last-name'),
     phoneInput = document.querySelector('#phone');
+  bodyInput = document.querySelector('#textarea')
 
   function showErrorMessage(input, message) {
     let container = input.parentElement;

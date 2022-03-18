@@ -2,6 +2,14 @@ let work = (function () {
 
   let projectList = [
     {
+      name: 'Meet App',
+      github: 'https://github.com/khurdt/meet-app',
+      view: 'https://khurdt.github.io/meet-app/',
+      description: 'an App to see events in specific cities',
+      img: '',
+      modalimg: ''
+    },
+    {
       name: 'Movie Info React App',
       github: 'https://github.com/khurdt/movie-app-api',
       view: 'https://kh-cinema-app.netlify.app/',
