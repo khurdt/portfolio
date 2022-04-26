@@ -5,15 +5,9 @@ let work = (function () {
       name: 'Meet App',
       github: 'https://github.com/khurdt/meet-app',
       view: 'https://khurdt.github.io/meet-app/',
-<<<<<<< HEAD
-      description: 'an App to see events in specific cities',
+      description: 'an App for users to see events in different cities and potentially meet with others. Using Google Calendars as my data source and a serverless function from AWS I could render a list of events making it look pretty with Bootstrap.  I also used recharts as a way to make pie and bar charts. This app was also converted into a Progressive Web App(PWA) being able to be offline and used as either as a desktop or mobile app.',
       img: './images/meet.png',
       modalimg: './images/event-ticket-png.png'
-=======
-      description: 'an App for users to see events in different cities and potentially meet with others. Using Google Calendars as my data source and a serverless function from AWS I could render a list of events making it look pretty with Bootstrap.  I also used recharts as a way to make pie and bar charts. This app was also converted into a Progressive Web App(PWA) being able to be offline and used as either as a desktop or mobile app.',
-      img: './images/coming-soon.png',
-      modalimg: './images/coming-soon.png'
->>>>>>> origin/main
     },
     {
       name: 'Movie Info React App',
