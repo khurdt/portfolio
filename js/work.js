@@ -5,7 +5,7 @@ let work = (function () {
       name: 'Meet App',
       github: 'https://github.com/khurdt/meet-app',
       view: 'https://khurdt.github.io/meet-app/',
-      description: 'an App to see events in specific cities',
+      description: 'an App for users to see events in different cities and potentially meet with others. Using Google Calendars as my data source and a serverless function from AWS I could render a list of events making it look pretty with Bootstrap.  I also used recharts as a way to make pie and bar charts. This app was also converted into a Progressive Web App(PWA) being able to be offline and used as either as a desktop or mobile app.',
       img: './images/coming-soon.png',
       modalimg: './images/coming-soon.png'
     },
@@ -13,7 +13,7 @@ let work = (function () {
       name: 'Movie Info React App',
       github: 'https://github.com/khurdt/movie-app-api',
       view: 'https://kh-cinema-app.netlify.app/',
-      description: 'Built server and database using node, express, and mongo. Enjoyed creating endpoints and connecting them to the database. Also built client side using React and Redux. One of the difficulties or main cause of bugs was trying to pass props and functions without losing their state or loading them before page rendered. The other difficulty was how to keep all the data the same as different views updated.',
+      description: 'An App for users to see movies and their info and keep track of favorites. Built server and database using node, express, and mongo. Enjoyed creating endpoints and connecting them to the database. Also built client side using React, Redux, and Bootstrap. One of the difficulties or main cause of bugs was trying to pass props and functions without losing their state or loading them before page rendered. The other difficulty was how to keep all the data the same as different views updated.',
       img: './images/movie-app.png',
       modalimg: './images/lego.png'
     },
@@ -159,3 +159,12 @@ let work = (function () {
 work.getAll().forEach(function (project) {
   work.displayWork(project);
 });
+
+
+// Update your portfolio to include your new project. Be sure to add the hosted version, the GitHub repository, a screenshot,
+//a description and objective, a list of the technologies used for the project, and any additional materials you deem relevant.
+//Try also to reflect on your work by answering the following questions:
+// What was your role for this project and what tasks did you face?
+// What decisions did you take and why? What were the consequences?
+// If you could, what would you do differently?
+// What lessons did you learn during this project?
