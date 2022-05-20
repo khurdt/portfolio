@@ -126,7 +126,7 @@ function submit(e) {
   e.preventDefault();
 
   let xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://ts86j19yal.execute-api.us-east-1.amazonaws.com/dev', true);
+  xhr.open('POST', 'https://th4ow5edkf.execute-api.us-east-1.amazonaws.com/dev', true);
 
   xhr.setRequestHeader('Content-type', 'application/json');
   xhr.onreadystatechange = function () {

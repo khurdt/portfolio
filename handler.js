@@ -6,46 +6,43 @@ import { urlencoded, json } from "body-parser";
 
 const app = express();
 
-if (!config.region) {
-  config.update({
-    region: 'add your region'
+if (!AWS.config.region) {
+  AWS.config.update({
+    region: "us-east-1"
   });
 }
 
-const ses = new SES();
+const ses = new AWS.SES();
 
 app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-//parse application/x-www-form-urlencoded
-app.use(urlencoded({ extended: false }));
-
-//parse application/json
-app.use(json());
-
-app.post('/contact.html', (req, res) => {
+app.post("/", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
+  const phone = req.body.phone;
   const message = req.body.message;
 
   const emailParams = {
-    Source: 'joshuahurdt@gmail.com',
+    Source: "joshuahurdt@gmail.com", // Your Verified Email
     Destination: {
-      toAddresses: ['joshuahurdt@gmail.com']
+      ToAddresses: ["joshuahurdt@gmail.com"] // Your verfied Email
     },
     ReplyToAddresses: [email],
     Message: {
       Body: {
         Text: {
-          Charset: 'UTF-8',
-          Data: `${message} from ${email}`
+          Charset: "UTF-8",
+          Data: `${message}  from ${name}, email: ${email}, phone: ${phone}`
         }
       },
       Subject: {
-        Charset: 'UTF-8',
-        Data: 'You Received a Message from https://khurdt.github.io/portfolio/contact.html'
+        Charset: "UTF-8",
+        Data: "You Received a Message from www.domainname.com"
       }
     }
-  }
+  };
 
   ses.sendEmail(emailParams, (err, data) => {
     if (err) {
