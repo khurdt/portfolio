@@ -9,6 +9,10 @@ body {
 	height: 100%;
 }
 
+.page__highlight {
+	color: lightcoral;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -440,6 +444,13 @@ label {
 
 .contact__item:nth-child(6) {
 	text-align: center;
+}
+
+.success {
+	margin: 50px auto;
+	text-align: center;
+	color: lightcoral;
+	font-size: 20px;
 }
 
 /*Media Query-------------------------------------------------*/

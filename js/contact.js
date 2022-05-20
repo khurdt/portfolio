@@ -1,22 +1,4 @@
 (function () {
-  //email serverless function
-  const aws = require('aws-sdk');
-  const nodemailer = require('nodemailer');
-  const ses = new aws.SES();
-
-  exports.handler = (event) => {
-    const mailOptions = {
-      from: emailInput.event.value,
-      to: 'joshuahurdt@gmail.com',
-      name: ('' + firstNameInput.event.value + ' ' + lastNameInput + ''),
-      phone: phoneInput.event.value,
-      text: bodyInput.event.value,
-    };
-    const transporter = nodemailer.createTransport({
-      SES: ses
-    });
-    transporter.sendMail(mailOptions);
-  }
 
   //input validation
   let form = document.querySelector('#register-form'),
@@ -24,7 +6,7 @@
     firstNameInput = document.querySelector('#first-name'),
     lastNameInput = document.querySelector('#last-name'),
     phoneInput = document.querySelector('#phone');
-  bodyInput = document.querySelector('#textarea')
+
 
   function showErrorMessage(input, message) {
     let container = input.parentElement;
@@ -87,10 +69,12 @@
   function validatePhone() {
     let value = phoneInput.value;
 
-    if (value.length !== 9) {
-      showErrorMessage(phoneInput, '*Enter a valid phone number');
-      return false;
-    }
+    // if (value.length !== 10) {
+    //   showErrorMessage(phoneInput, '*Enter a valid phone number');
+    //   return false;
+    // } else {
+    //   showErrorMessage(phoneInput, '');
+    // }
 
     showErrorMessage(phoneInput, null);
     return true;
@@ -125,3 +109,46 @@
   phoneInput.addEventListener('keyup', addDashes);
 
 })();
+
+
+let emailInput = document.querySelector('#email'),
+  firstNameInput = document.querySelector('#first-name'),
+  lastNameInput = document.querySelector('#last-name'),
+  phoneInput = document.querySelector('#phone'),
+  bodyInput = document.querySelector('#textarea'),
+  button = document.querySelector('.button'),
+  success = document.querySelector(".success"),
+  error = document.querySelector('.error');
+
+button.addEventListener('click', submit);
+
+function submit(e) {
+  e.preventDefault();
+
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://ts86j19yal.execute-api.us-east-1.amazonaws.com/dev', true);
+
+  xhr.setRequestHeader('Content-type', 'application/json');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+    }
+  };
+  let data = {
+    name: (firstNameInput.value + '' + lastNameInput.value),
+    email: emailInput.value,
+    phone: phoneInput.value,
+    message: bodyInput.value
+  }
+
+  if (firstNameInput.value && lastNameInput.value && emailInput.value && bodyInput.value) {
+    success.style.display = 'block';
+    success.innerText = 'Thanks for submitting';
+    document.querySelector('.contact__container').style.display = 'none';
+
+    xhr.send(JSON.stringify(data));
+
+  } else {
+    error.style.display = 'block';
+    error.innerText = 'Please Fill All Details';
+  }
+}

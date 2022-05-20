@@ -2,6 +2,14 @@ let work = (function () {
 
   let projectList = [
     {
+      name: 'Chat App',
+      github: 'https://github.com/khurdt/chat-app',
+      view: 'https://github.com/khurdt/chat-app#simple-chat-application',
+      description: 'An app to to be able to send texts, images, and current location. This app utilized "Expo" for making universal native apps for Android, iOS, and the web with JavaScript and React, "Firebase" as its real-time database, and "Gifted Chat" as its Chat UI.',
+      img: './images/chat-app.png',
+      modalimg: './images/holding-phone.png'
+    },
+    {
       name: 'Meet App',
       github: 'https://github.com/khurdt/meet-app',
       view: 'https://khurdt.github.io/meet-app/',
@@ -10,7 +18,7 @@ let work = (function () {
       modalimg: './images/event-ticket-png.png'
     },
     {
-      name: 'Movie Info React App',
+      name: 'Movie Info App',
       github: 'https://github.com/khurdt/movie-app-api',
       view: 'https://kh-cinema-app.netlify.app/',
       description: 'An App for users to see movies and their info and keep track of favorites. Built server and database using node, express, and mongo. Enjoyed creating endpoints and connecting them to the database. Also built client side using React, Redux, and Bootstrap. One of the difficulties or main cause of bugs was trying to pass props and functions without losing their state or loading them before page rendered. The other difficulty was how to keep all the data the same as different views updated.',
@@ -168,3 +176,13 @@ work.getAll().forEach(function (project) {
 // What decisions did you take and why? What were the consequences?
 // If you could, what would you do differently?
 // What lessons did you learn during this project?
+
+// - What was your role for this project and what tasks did you face?
+// - What decisions did you take and why? What were the consequences?
+// - If you could, what would you do differently?
+// - What lessons did you learn during this project?
+// 2) A screenshot to represent the project.
+// 3) A link to the project’s GitHub repository.
+// 4) A link to the live, hosted version of your app (if possible). If you don’t have a live version, include screenshots that show the app’s functionality or a recording of your app in use.
+// 5) A list of the technologies used for each project (React, CSS etc. — again, you can pull this from your README file).
+// 6) Any other relevant materials you created for the project; for example, user flows, user stories, and/or a Kanban board. Be sure to explain how you worked with these materials during the project.

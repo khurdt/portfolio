@@ -1,1 +1,7 @@
-.DS_Store
+# package directories
+node_modules/punycode
+jspm_packages
+
+# Serverless directories
+.serverless
+node_modules
