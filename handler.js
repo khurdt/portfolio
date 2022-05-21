@@ -6,17 +6,20 @@ import { urlencoded, json } from "body-parser";
 
 const app = express();
 
-if (!AWS.config.region) {
-  AWS.config.update({
+if (!config.region) {
+  config.update({
     region: "us-east-1"
   });
 }
 
-const ses = new AWS.SES();
+const ses = new SES();
 
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(cors({
+  origin: 'https://khurdt.github.io/portfolio/contact.html'
+}));
+
+app.use(urlencoded({ extended: false }));
+app.use(json());
 
 app.post("/", (req, res) => {
   const name = req.body.name;
