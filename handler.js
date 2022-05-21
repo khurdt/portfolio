@@ -16,7 +16,8 @@ const ses = new SES();
 
 let allowedOrigins = [
   'https://khurdt.github.io',
-  'https://khurdt.github.io/portfolio/contact.html'
+  'https://khurdt.github.io/portfolio/contact.html',
+  'https://khurdt.github.io/portfolio/'
 ];
 
 //implementing limits using CORS
@@ -66,7 +67,8 @@ app.post("/", (req, res) => {
       res.status(402).send(`${err} ${err.stack}`);
     }
     if (data) {
-      res.send(data);
+      res.status(200).send(data);
+
     }
   });
 });
