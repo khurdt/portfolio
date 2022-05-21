@@ -132,6 +132,9 @@ function submit(e) {
   xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
   xhr.setRequestHeader('Content-type', 'application/json');
   xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+  xhr.setRequestHeader('Access-Control-Allow-Origin: *');
+  xhr.setRequestHeader('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+  xhr.setRequestHeader('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
   console.log('set request headers');
 
   xhr.onreadystatechange = function () {
