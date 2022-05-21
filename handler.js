@@ -14,11 +14,10 @@ if (!config.region) {
 
 const ses = new SES();
 
-let allowedOrigins = [
-  'https://khurdt.github.io',
-  'https://khurdt.github.io/portfolio/contact.html',
-  'https://khurdt.github.io/portfolio/'
-];
+let allowedOrigins = ['*'];
+// 'https://khurdt.github.io',
+// 'https://khurdt.github.io/portfolio/contact.html',
+// 'https://khurdt.github.io/portfolio/'
 
 //implementing limits using CORS
 app.use(cors({
