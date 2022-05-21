@@ -127,7 +127,8 @@ function submit(e) {
 
   let xhr = new XMLHttpRequest();
   xhr.open('POST', 'https://th4ow5edkf.execute-api.us-east-1.amazonaws.com/dev/');
-
+  xhr.withCredentials = false
+  xhr.setRequestHeader('Access-Control-Allow-Origin', '*')
   xhr.setRequestHeader('Content-type', 'application/json');
   xhr.onreadystatechange = function () {
     if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
