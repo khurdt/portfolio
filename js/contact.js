@@ -126,8 +126,8 @@ function submit(e) {
   e.preventDefault();
 
   let xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://th4ow5edkf.execute-api.us-east-1.amazonaws.com/dev/', true);
-
+  xhr.open('POST', 'https://th4ow5edkf.execute-api.us-east-1.amazonaws.com/dev/');
+  xhr.withCredentials(false)
   xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://khurdt.github.io/portfolio/contact.html');
   xhr.setRequestHeader('Content-type', 'application/json');
   xhr.onreadystatechange = function () {
