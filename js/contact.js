@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios/dist/axios';
 
 (function () {
 
@@ -134,7 +134,14 @@ async function sendContactInfo(e) {
   console.log(JSON.stringify(data));
 
   axios.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev/', {
-    data
+    name: (firstNameInput.value + ' ' + lastNameInput.value),
+    email: emailInput.value,
+    phone: phoneInput.value,
+    message: bodyInput.value,
+    headers: {
+      'Access-Control-Allow-Methods': '*',
+      'Access-Control-Allow-Origin': '*',
+    }
   })
     .then(response => {
       console.log(response);
