@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export async function sendContactInfo(name, email, phone, message, success) {
 
     let data = {
