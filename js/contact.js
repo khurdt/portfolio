@@ -132,7 +132,7 @@ async function sendContactInfo(e) {
   }
   console.log(JSON.stringify(data));
 
-  axios.post(' https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev', {
+  axios.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev', {
     data
   })
     .then(response => {
