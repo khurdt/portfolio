@@ -526,9 +526,7 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"lAbzg":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
+const axios = require('axios');
 (function() {
     //input validation
     let form = document.querySelector('#register-form'), emailInput1 = document.querySelector('#email'), firstNameInput1 = document.querySelector('#first-name'), lastNameInput1 = document.querySelector('#last-name'), phoneInput1 = document.querySelector('#phone');
@@ -617,7 +615,7 @@ async function sendContactInfo(e) {
         message: bodyInput.value
     };
     console.log(JSON.stringify(data));
-    _axiosDefault.default.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev/', {
+    axios.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev/', {
         name: firstNameInput.value + ' ' + lastNameInput.value,
         email: emailInput.value,
         phone: phoneInput.value,
@@ -636,37 +634,7 @@ async function sendContactInfo(e) {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","axios":"jo6P5"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"jo6P5":[function(require,module,exports) {
+},{"axios":"jo6P5"}],"jo6P5":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -714,7 +682,7 @@ module.exports = axios;
 // Allow use of default import syntax in TypeScript
 module.exports.default = axios;
 
-},{"./utils":"5By4s","./helpers/bind":"haRQb","./core/Axios":"cpqD8","./core/mergeConfig":"b85oP","./defaults":"lTJJ4","./cancel/CancelToken":"45wzn","./cancel/isCancel":"a0VmF","./env/data":"h29L9","./helpers/spread":"dyQ8N","./helpers/isAxiosError":"eyiLq","./cancel/Cancel":"kjMy2"}],"5By4s":[function(require,module,exports) {
+},{"./utils":"5By4s","./helpers/bind":"haRQb","./core/Axios":"cpqD8","./core/mergeConfig":"b85oP","./defaults":"lTJJ4","./cancel/Cancel":"kjMy2","./cancel/CancelToken":"45wzn","./cancel/isCancel":"a0VmF","./env/data":"h29L9","./helpers/spread":"dyQ8N","./helpers/isAxiosError":"eyiLq"}],"5By4s":[function(require,module,exports) {
 'use strict';
 var bind = require('./helpers/bind');
 // utils is a library of generic helper functions non-specific to axios
