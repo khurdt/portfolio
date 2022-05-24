@@ -34,7 +34,9 @@ module.exports.sendEmail = async (event, context, callback) => {
     body: JSON.stringify(responseBody),
     isBase64Encoded: false,
     headers: {
-      "Access-Control-Allow-Origin": "*",
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Methods': 'POST',
+      'Access-Control-Allow-Origin': 'https://khurdt.github.io',
     },
   });
 }

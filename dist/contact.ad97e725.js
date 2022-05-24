@@ -528,7 +528,8 @@ function hmrAcceptRun(bundle, id) {
 },{}],"lAbzg":[function(require,module,exports) {
 (function() {
     //input validation
-    let form = document.querySelector('#register-form'), emailInput1 = document.querySelector('#email'), firstNameInput1 = document.querySelector('#first-name'), lastNameInput1 = document.querySelector('#last-name'), phoneInput1 = document.querySelector('#phone');
+    let form = document.querySelector('#register-form'), emailInput = document.querySelector('#email'), firstNameInput = document.querySelector('#first-name'), lastNameInput = document.querySelector('#last-name'), phoneInput = document.querySelector('#phone'), bodyInput = document.querySelector('#textarea'), // button = document.querySelector('.button'),
+    success = document.querySelector(".success");
     function showErrorMessage(input, message) {
         let container = input.parentElement;
         let error = container.querySelector('.error-message');
@@ -541,49 +542,49 @@ function hmrAcceptRun(bundle, id) {
         }
     }
     function validateFirstName() {
-        let value = firstNameInput1.value;
+        let value = firstNameInput.value;
         if (!value) {
-            showErrorMessage(firstNameInput1, '*First name is required');
+            showErrorMessage(firstNameInput, '*First name is required');
             return false;
         }
-        showErrorMessage(firstNameInput1, null);
+        showErrorMessage(firstNameInput, null);
         return true;
     }
     function validateLastName() {
-        let value = lastNameInput1.value;
+        let value = lastNameInput.value;
         if (!value) {
-            showErrorMessage(lastNameInput1, '*Last name is required');
+            showErrorMessage(lastNameInput, '*Last name is required');
             return false;
         }
-        showErrorMessage(lastNameInput1, null);
+        showErrorMessage(lastNameInput, null);
         return true;
     }
     function validateEmail() {
-        let value = emailInput1.value;
+        let value = emailInput.value;
         if (!value) {
-            showErrorMessage(emailInput1, '*Email is a required field');
+            showErrorMessage(emailInput, '*Email is a required field');
             return false;
         }
         if (value.indexOf('@') === -1) {
-            showErrorMessage(emailInput1, '*Enter a valid email');
+            showErrorMessage(emailInput, '*Enter a valid email');
             return false;
         }
-        showErrorMessage(emailInput1, null);
+        showErrorMessage(emailInput, null);
         return true;
     }
     function validatePhone() {
-        let value = phoneInput1.value;
+        let value = phoneInput.value;
         // if (value.length !== 10) {
         //   showErrorMessage(phoneInput, '*Enter a valid phone number');
         //   return false;
         // } else {
         //   showErrorMessage(phoneInput, '');
         // }
-        showErrorMessage(phoneInput1, null);
+        showErrorMessage(phoneInput, null);
         return true;
     }
     function addDashes() {
-        let phone = phoneInput1.value;
+        let phone = phoneInput.value;
         phone = phone.split('-').join('');
         phone = phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
         console.log(phone);
@@ -595,43 +596,44 @@ function hmrAcceptRun(bundle, id) {
     //Event Listeners
     form.addEventListener('submit', (event)=>{
         event.preventDefault(); // Do not submit to the server
-        if (validateForm()) console.log('Success!');
-    });
-    emailInput1.addEventListener('input', validateEmail);
-    firstNameInput1.addEventListener('input', validateFirstName);
-    lastNameInput1.addEventListener('input', validateLastName);
-    phoneInput1.addEventListener('input', validatePhone);
-    phoneInput1.addEventListener('keyup', addDashes);
-})();
-let emailInput = document.querySelector('#email'), firstNameInput = document.querySelector('#first-name'), lastNameInput = document.querySelector('#last-name'), phoneInput = document.querySelector('#phone'), bodyInput = document.querySelector('#textarea'), button = document.querySelector('.button'), success = document.querySelector(".success");
-button.addEventListener('click', sendContactInfo);
-async function sendContactInfo(e) {
-    e.preventDefault();
-    let data = {
-        name: firstNameInput.value + ' ' + lastNameInput.value,
-        email: emailInput.value,
-        phone: phoneInput.value,
-        message: bodyInput.value
-    };
-    console.log(JSON.stringify(data));
-    axios.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev/', {
-        name: firstNameInput.value + ' ' + lastNameInput.value,
-        email: emailInput.value,
-        phone: phoneInput.value,
-        message: bodyInput.value,
-        headers: {
-            'Access-Control-Allow-Methods': '*',
-            'Access-Control-Allow-Origin': '*'
+        if (validateForm()) {
+            console.log('Success!');
+            sendContactInfo();
         }
-    }).then((response)=>{
-        console.log(response);
-        success.style.display = 'block';
-        success.innerText = 'Thanks for submitting';
-        document.querySelector('.contact__container').style.display = 'none';
-    }).catch((error)=>{
-        console.log(error.response);
     });
-}
+    async function sendContactInfo() {
+        let data = {
+            name: firstNameInput.value + ' ' + lastNameInput.value,
+            email: emailInput.value,
+            phone: phoneInput.value,
+            message: bodyInput.value
+        };
+        console.log(JSON.stringify(data));
+        axios.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev/', {
+            name: firstNameInput.value + ' ' + lastNameInput.value,
+            email: emailInput.value,
+            phone: phoneInput.value,
+            message: bodyInput.value,
+            headers: {
+                'Access-Control-Allow-Headers': '*',
+                'Access-Control-Allow-Methods': 'POST',
+                'Access-Control-Allow-Origin': 'https://khurdt.github.io'
+            }
+        }).then((response)=>{
+            console.log(response);
+            success.style.display = 'block';
+            success.innerText = 'Thanks for submitting';
+            document.querySelector('.contact__container').style.display = 'none';
+        }).catch((error)=>{
+            console.log(error.response);
+        });
+    }
+    emailInput.addEventListener('input', validateEmail);
+    firstNameInput.addEventListener('input', validateFirstName);
+    lastNameInput.addEventListener('input', validateLastName);
+    phoneInput.addEventListener('input', validatePhone);
+    phoneInput.addEventListener('keyup', addDashes);
+})();
 
 },{}]},["34lqe","lAbzg"], "lAbzg", "parcelRequire2041")
 

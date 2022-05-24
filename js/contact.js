@@ -5,7 +5,10 @@
     emailInput = document.querySelector('#email'),
     firstNameInput = document.querySelector('#first-name'),
     lastNameInput = document.querySelector('#last-name'),
-    phoneInput = document.querySelector('#phone');
+    phoneInput = document.querySelector('#phone'),
+    bodyInput = document.querySelector('#textarea'),
+    // button = document.querySelector('.button'),
+    success = document.querySelector(".success");
 
 
   function showErrorMessage(input, message) {
@@ -99,8 +102,40 @@
     event.preventDefault(); // Do not submit to the server
     if (validateForm()) {
       console.log('Success!');
+      sendContactInfo();
     }
   })
+
+  async function sendContactInfo() {
+    let data = {
+      name: (firstNameInput.value + ' ' + lastNameInput.value),
+      email: emailInput.value,
+      phone: phoneInput.value,
+      message: bodyInput.value,
+    }
+    console.log(JSON.stringify(data));
+
+    axios.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev/', {
+      name: (firstNameInput.value + ' ' + lastNameInput.value),
+      email: emailInput.value,
+      phone: phoneInput.value,
+      message: bodyInput.value,
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Methods': 'POST',
+        'Access-Control-Allow-Origin': 'https://khurdt.github.io',
+      }
+    })
+      .then(response => {
+        console.log(response);
+        success.style.display = 'block';
+        success.innerText = 'Thanks for submitting';
+        document.querySelector('.contact__container').style.display = 'none';
+      })
+      .catch(error => {
+        console.log(error.response)
+      });
+  }
 
   emailInput.addEventListener('input', validateEmail);
   firstNameInput.addEventListener('input', validateFirstName);
@@ -110,43 +145,3 @@
 
 })();
 
-let emailInput = document.querySelector('#email'),
-  firstNameInput = document.querySelector('#first-name'),
-  lastNameInput = document.querySelector('#last-name'),
-  phoneInput = document.querySelector('#phone'),
-  bodyInput = document.querySelector('#textarea'),
-  button = document.querySelector('.button'),
-  success = document.querySelector(".success");
-
-button.addEventListener('click', sendContactInfo);
-
-async function sendContactInfo(e) {
-  e.preventDefault();
-  let data = {
-    name: (firstNameInput.value + ' ' + lastNameInput.value),
-    email: emailInput.value,
-    phone: phoneInput.value,
-    message: bodyInput.value,
-  }
-  console.log(JSON.stringify(data));
-
-  axios.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev/', {
-    name: (firstNameInput.value + ' ' + lastNameInput.value),
-    email: emailInput.value,
-    phone: phoneInput.value,
-    message: bodyInput.value,
-    headers: {
-      'Access-Control-Allow-Methods': '*',
-      'Access-Control-Allow-Origin': '*',
-    }
-  })
-    .then(response => {
-      console.log(response);
-      success.style.display = 'block';
-      success.innerText = 'Thanks for submitting';
-      document.querySelector('.contact__container').style.display = 'none';
-    })
-    .catch(error => {
-      console.log(error.response)
-    });
-}
