@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 (function () {
 
   //input validation
@@ -112,6 +110,8 @@ const axios = require('axios');
 
 })();
 
+import { sendContactInfo } from '../module'
+
 let emailInput = document.querySelector('#email'),
   firstNameInput = document.querySelector('#first-name'),
   lastNameInput = document.querySelector('#last-name'),
@@ -120,36 +120,13 @@ let emailInput = document.querySelector('#email'),
   button = document.querySelector('.button'),
   success = document.querySelector(".success");
 
-button.addEventListener('click', sendContactInfo);
+const name = (firstNameInput.value + ' ' + lastNameInput.value),
+  email = emailInput.value,
+  phone = phoneInput.value,
+  message = bodyInput.value;
 
-async function sendContactInfo(e) {
+button.addEventListener('click', (e) => {
   e.preventDefault();
+  sendContactInfo(name, email, phone, message, success)
+});
 
-  let data = {
-    name: (firstNameInput.value + ' ' + lastNameInput.value),
-    email: emailInput.value,
-    phone: phoneInput.value,
-    message: bodyInput.value
-  }
-  console.log(JSON.stringify(data));
-
-  axios.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev/', {
-    name: (firstNameInput.value + ' ' + lastNameInput.value),
-    email: emailInput.value,
-    phone: phoneInput.value,
-    message: bodyInput.value,
-    headers: {
-      'Access-Control-Allow-Methods': '*',
-      'Access-Control-Allow-Origin': '*',
-    }
-  })
-    .then(response => {
-      console.log(response);
-      success.style.display = 'block';
-      success.innerText = 'Thanks for submitting';
-      document.querySelector('.contact__container').style.display = 'none';
-    })
-    .catch(error => {
-      console.log(error.response)
-    });
-}

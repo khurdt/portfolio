@@ -526,18 +526,18 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"lAbzg":[function(require,module,exports) {
-const axios = require('axios');
+var _module = require("../module");
 (function() {
     //input validation
     let form = document.querySelector('#register-form'), emailInput1 = document.querySelector('#email'), firstNameInput1 = document.querySelector('#first-name'), lastNameInput1 = document.querySelector('#last-name'), phoneInput1 = document.querySelector('#phone');
-    function showErrorMessage(input, message) {
+    function showErrorMessage(input, message1) {
         let container = input.parentElement;
         let error = container.querySelector('.error-message');
         if (error) container.removeChild(error);
-        if (message) {
+        if (message1) {
             let error = document.createElement('div');
             error.classList.add('error-message');
-            error.innerText = message;
+            error.innerText = message1;
             container.appendChild(error);
         }
     }
@@ -584,10 +584,10 @@ const axios = require('axios');
         return true;
     }
     function addDashes() {
-        let phone = phoneInput1.value;
-        phone = phone.split('-').join('');
-        phone = phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
-        console.log(phone);
+        let phone1 = phoneInput1.value;
+        phone1 = phone1.split('-').join('');
+        phone1 = phone1.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+        console.log(phone1);
     }
     function validateForm() {
         let goodEmail = validateEmail(), goodFirstName = validateFirstName(), goodLastName = validateLastName(), goodPhone = validatePhone();
@@ -605,21 +605,32 @@ const axios = require('axios');
     phoneInput1.addEventListener('keyup', addDashes);
 })();
 let emailInput = document.querySelector('#email'), firstNameInput = document.querySelector('#first-name'), lastNameInput = document.querySelector('#last-name'), phoneInput = document.querySelector('#phone'), bodyInput = document.querySelector('#textarea'), button = document.querySelector('.button'), success = document.querySelector(".success");
-button.addEventListener('click', sendContactInfo);
-async function sendContactInfo(e) {
+const name = firstNameInput.value + ' ' + lastNameInput.value, email = emailInput.value, phone = phoneInput.value, message = bodyInput.value;
+button.addEventListener('click', (e)=>{
     e.preventDefault();
+    _module.sendContactInfo(name, email, phone, message, success);
+});
+
+},{"../module":"dxpzB"}],"dxpzB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "sendContactInfo", ()=>sendContactInfo
+);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+async function sendContactInfo(name, email, phone, message, success) {
     let data = {
-        name: firstNameInput.value + ' ' + lastNameInput.value,
-        email: emailInput.value,
-        phone: phoneInput.value,
-        message: bodyInput.value
+        name,
+        email,
+        phone,
+        message
     };
     console.log(JSON.stringify(data));
-    axios.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev/', {
-        name: firstNameInput.value + ' ' + lastNameInput.value,
-        email: emailInput.value,
-        phone: phoneInput.value,
-        message: bodyInput.value,
+    _axiosDefault.default.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev/', {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
         headers: {
             'Access-Control-Allow-Methods': '*',
             'Access-Control-Allow-Origin': '*'
@@ -634,7 +645,7 @@ async function sendContactInfo(e) {
     });
 }
 
-},{"axios":"jo6P5"}],"jo6P5":[function(require,module,exports) {
+},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -2172,6 +2183,36 @@ var utils = require('./../utils');
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"5By4s"}]},["34lqe","lAbzg"], "lAbzg", "parcelRequire2041")
+},{"./../utils":"5By4s"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}]},["34lqe","lAbzg"], "lAbzg", "parcelRequire2041")
 
 //# sourceMappingURL=contact.ad97e725.js.map
