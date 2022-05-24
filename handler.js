@@ -7,10 +7,10 @@ module.exports.sendEmail = async (event, context, callback) => {
   let stringifiedEvent = JSON.stringify(event);
   let parsedEvent = JSON.parse(stringifiedEvent);
   let responseBody = JSON.parse(parsedEvent.body);
-  let name = responseBody.name;
-  let email = responseBody.email;
-  let phone = responseBody.phone;
-  let message = responseBody.message;
+  let name = await responseBody.name;
+  let email = await responseBody.email;
+  let phone = await responseBody.phone;
+  let message = await responseBody.message;
 
   const transporter = nodemailer.createTransport({
     SES: ses

@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 (function () {
 
   //input validation
@@ -99,7 +100,7 @@ import axios from 'axios';
   form.addEventListener('submit', (event) => {
     event.preventDefault(); // Do not submit to the server
     if (validateForm()) {
-      alert('Success!');
+      console.log('Success!');
     }
   })
 
@@ -132,7 +133,7 @@ async function sendContactInfo(e) {
   }
   console.log(JSON.stringify(data));
 
-  axios.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev', {
+  axios.post('https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev/', {
     data
   })
     .then(response => {

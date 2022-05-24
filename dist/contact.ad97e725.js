@@ -598,7 +598,7 @@ var _axiosDefault = parcelHelpers.interopDefault(_axios);
     //Event Listeners
     form.addEventListener('submit', (event)=>{
         event.preventDefault(); // Do not submit to the server
-        if (validateForm()) alert('Success!');
+        if (validateForm()) console.log('Success!');
     });
     emailInput1.addEventListener('input', validateEmail);
     firstNameInput1.addEventListener('input', validateFirstName);
