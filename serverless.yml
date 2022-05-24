@@ -12,8 +12,6 @@
 # Happy Coding!
 
 service: portfolio
-# function: app: portfolio-dev-app 
-
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -25,18 +23,25 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs12.x
-  region: us-east-1
+  region: ca-central-1
+  timeout: 60
   iamRoleStatements:
-    - Effect: "Allow"
+    - Effect: Allow
       Action:
-        - "ses:SendEmail"
-      Resource: "*"
+        - ses:SendEmail          
+        - ses:SendRawEmail         
+      Resource: '*'  
+  environment:
+    EMAIL_ID: ${file(config.json):EMAIL_ID}
 
 functions:
-  app:
-    handler: handler.form
-    events:
-        - http: POST /
+  sendEmail:
+    handler: handler.sendEmail
+    events: 
+      - http:
+          path: /
+          method: any
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

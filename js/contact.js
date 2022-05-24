@@ -1,3 +1,4 @@
+import axios from 'axios';
 (function () {
 
   //input validation
@@ -110,50 +111,37 @@
 
 })();
 
-
 let emailInput = document.querySelector('#email'),
   firstNameInput = document.querySelector('#first-name'),
   lastNameInput = document.querySelector('#last-name'),
   phoneInput = document.querySelector('#phone'),
   bodyInput = document.querySelector('#textarea'),
   button = document.querySelector('.button'),
-  success = document.querySelector(".success"),
-  error = document.querySelector('.error');
+  success = document.querySelector(".success");
 
-button.addEventListener('click', submit);
+button.addEventListener('click', sendContactInfo);
 
-function submit(e) {
+async function sendContactInfo(e) {
   e.preventDefault();
 
-  let xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://th4ow5edkf.execute-api.us-east-1.amazonaws.com/dev/', true);
-  console.log('opened request');
-
-  xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
-  xhr.setRequestHeader('Content-type', 'application/json');
-  xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-  console.log('set request headers');
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-    }
-  };
   let data = {
-    name: (firstNameInput.value + '' + lastNameInput.value),
+    name: (firstNameInput.value + ' ' + lastNameInput.value),
     email: emailInput.value,
     phone: phoneInput.value,
     message: bodyInput.value
   }
+  console.log(JSON.stringify(data));
 
-  if (firstNameInput.value && lastNameInput.value && emailInput.value && bodyInput.value) {
-    success.style.display = 'block';
-    success.innerText = 'Thanks for submitting';
-    document.querySelector('.contact__container').style.display = 'none';
-
-    xhr.send(JSON.stringify(data));
-
-  } else {
-    error.style.display = 'block';
-    error.innerText = 'Please Fill All Details';
-  }
+  axios.post(' https://73v00p9r39.execute-api.ca-central-1.amazonaws.com/dev', {
+    data
+  })
+    .then(response => {
+      console.log(response);
+      success.style.display = 'block';
+      success.innerText = 'Thanks for submitting';
+      document.querySelector('.contact__container').style.display = 'none';
+    })
+    .catch(error => {
+      console.log(error.response)
+    });
 }
