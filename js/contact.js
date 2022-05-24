@@ -110,7 +110,7 @@
 
 })();
 
-import { sendContactInfo } from '../module'
+import { sendContactInfo } from '../module.js'
 
 let emailInput = document.querySelector('#email'),
   firstNameInput = document.querySelector('#first-name'),
