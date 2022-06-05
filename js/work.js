@@ -2,6 +2,14 @@ let work = (function () {
 
   let projectList = [
     {
+      name: 'Angular Movie Info App',
+      github: 'https://github.com/khurdt/movie-app-angular-client',
+      view: 'https://khurdt.github.io/movie-app-angular-client',
+      description: '',
+      img: './images/angularFlix.png',
+      modalimg: './images/angular.png'
+    },
+    {
       name: 'Chat App',
       github: 'https://github.com/khurdt/chat-app',
       view: 'https://github.com/khurdt/chat-app#simple-chat-application',
