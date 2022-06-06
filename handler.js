@@ -21,7 +21,6 @@ module.exports.sendEmail = async (event, context, callback) => {
       await transporter.sendMail({
         from: process.env.EMAIL_ID, // sender address
         to: process.env.EMAIL_ID, // receiver address
-        cc: email,
         subject: `${name} contacted you from your portfolio website`, // subject line, taken from client request
         html: `<p>${name}</p><p>${phone}</p><p>${email}</p><p>${message}</p>`
       });
