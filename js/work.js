@@ -5,7 +5,8 @@ let work = (function () {
       name: 'Angular Movie Info App',
       github: 'https://github.com/khurdt/movie-app-angular-client',
       view: 'https://khurdt.github.io/movie-app-angular-client',
-      description: '',
+      description: `This app displays movies based on its existing server-side code (REST API and database), and allows you to see information about each movie, its genre and director. One can create an account and collect their personal favorite movies and delete them.
+      This app utitlized "Angular" for its client-side technology and "typedoc" for the supporting documentation. I used Angular Material to aid me in implementing CSS, Angular Routing was implemented, as well as a "service" for all my endpoint api calls.`,
       img: './images/angularFlix.png',
       modalimg: './images/angular.png'
     },
@@ -13,7 +14,7 @@ let work = (function () {
       name: 'Chat App',
       github: 'https://github.com/khurdt/chat-app',
       view: 'https://github.com/khurdt/chat-app#simple-chat-application',
-      description: 'An app to to be able to send texts, images, and current location. This app utilized "Expo" for making universal native apps for Android, iOS, and the web with JavaScript and React, "Firebase" as its real-time database, and "Gifted Chat" as its Chat UI.',
+      description: 'An app to to be able to send texts, images, and current location. This app utilized "Expo" for making universal native apps for Android, iOS, and the web with JavaScript and React, "Firebase" as its real-time database, and "Gifted Chat" as its Chat UI. One of the issues faced was implementing external libraries to be able to pick a photo from library, take a photo, get current location, and send it through Gifted Chat.',
       img: './images/chat-app.png',
       modalimg: './images/holding-phone.png'
     },
@@ -21,17 +22,25 @@ let work = (function () {
       name: 'Meet App',
       github: 'https://github.com/khurdt/meet-app',
       view: 'https://khurdt.github.io/meet-app/',
-      description: 'an App for users to see events in different cities and potentially meet with others. Using Google Calendars as my data source and a serverless function from AWS I could render a list of events making it look pretty with Bootstrap.  I also used recharts as a way to make pie and bar charts. This app was also converted into a Progressive Web App(PWA) being able to be offline and used as either as a desktop or mobile app.',
+      description: 'an App for users to see events in different cities and potentially meet with others. Using Google Calendars as my data source and a serverless function from AWS I could render a list of events making it look pretty with Bootstrap. I also used recharts as a way to make pie and bar charts. This app was also converted into a Progressive Web App(PWA) being able to be offline and used as either as a desktop or mobile app. The most challenging issue was learning how the serverless functions work, and getting data from google calendars with the lambda function',
       img: './images/meet.png',
       modalimg: './images/event-ticket-png.png'
     },
     {
-      name: 'Movie Info App',
-      github: 'https://github.com/khurdt/movie-app-api',
+      name: 'React Movie Info App',
+      github: 'https://github.com/khurdt/movie-app-client',
       view: 'https://kh-cinema-app.netlify.app/',
       description: 'An App for users to see movies and their info and keep track of favorites. Built server and database using node, express, and mongo. Enjoyed creating endpoints and connecting them to the database. Also built client side using React, Redux, and Bootstrap. One of the difficulties or main cause of bugs was trying to pass props and functions without losing their state or loading them before page rendered. The other difficulty was how to keep all the data the same as different views updated.',
       img: './images/movie-app.png',
       modalimg: './images/lego.png'
+    },
+    {
+      name: 'Movie App Server and Database',
+      github: 'https://github.com/khurdt/movie-app-api',
+      view: 'https://kh-movie-app.herokuapp.com',
+      description: 'Built server and database using node, express, and mongo. Also utilized mongoose middleware for model schemas and passport middleware for generating and authenticating JWT token. Also used bycrypt middleware to hashing password and authenticating hashed password. Enjoyed creating endpoints and connecting them to the mongo database and testing them with Postman. Creating Mongo database from the terminal was a good learning curve.',
+      img: './images/server.jpg',
+      modalimg: './images/database.png'
     },
     {
       name: 'Pokedex App',
@@ -39,7 +48,7 @@ let work = (function () {
       github2: 'https://khurdt.github.io/portfolio/work.html',
       github2title: 'No API',
       view: 'https://khurdt.github.io/pokedex.github.io/',
-      description: 'An app that fetches pokemon from an API and displays its image and information within a modal.',
+      description: 'An app that fetches pokemon from an API and displays its image and information within a modal. This app was built using vanilla javascript, HTML5, and CSS. The main learning curve was manipulating the DOM via javascript and implementing the search bar, and learning how to access data from api.',
       img: './images/pokedex.png',
       modalimg: './images/venusaur.png'
     },
@@ -49,7 +58,7 @@ let work = (function () {
       github2: 'https://khurdt.github.io/portfolio/work.html',
       github2title: 'No API',
       view: 'https://khurdt.github.io/drawing-app.github.io/',
-      description: 'An app for drawing on a blank canvas with different colors, multiple width sizes, and mirror or quardrant lines.',
+      description: 'An app for drawing on a blank canvas with different colors, multiple width sizes, and mirror or quardrant lines. This app utilized HTML5 canvas.',
       img: './images/drawing.png',
       modalimg: './images/color1.png'
     },
@@ -59,15 +68,16 @@ let work = (function () {
       github2: 'https://khurdt.github.io/portfolio/work.html',
       github2title: 'No API',
       view: 'https://khurdt.github.io/to-do-list-app.github.io/',
-      description: 'An app that displays a list from the provided input and allows you to highlight, cross out, or delete items.',
+      description: 'An app that displays a list from the provided input and allows you to highlight, cross out, or delete items. This app utilized JQuery instead of vanilla javascript.',
       img: './images/todolist.png',
       modalimg: './images/todolist (1).png'
-    }
-  ]
+    },
+  ];
 
+  let project;
   function loadWork() {
     projectList.forEach(function (item) {
-      let project = {
+      project = {
         name: item.name,
         github: item.github,
         view: item.view,
@@ -158,6 +168,13 @@ let work = (function () {
       modal.classList.remove('display');
     }
   });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('display')) {
+      modal.classList.remove('display');
+    }
+  });
+
 
   function getAll() {
     return projectList;

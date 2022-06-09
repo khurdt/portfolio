@@ -7,7 +7,8 @@
 	<title>Kevin Hurdt portfolio-website</title>
 	<link rel="icon" type="image/png" href="./images/favicon-32x32.png" sizes="32x32" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/style.production.css">
+	<!-- <link rel="stylesheet" type="text/css" href="./css/style.production.css"> -->
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 
@@ -16,7 +17,8 @@
 		<header class="page-header">
 			<!-- Add logo here -->
 			<img class="page-header__item" src="./images/logo.png" alt="logo with title name Kevin Hurdt">
-			<nav class="page-header__item">
+			<img class="hamburger page-header__item" src="./images/hamburger.svg" />
+			<nav class="page-header__item navBar">
 				<div class="nav decor">
 					<ul role="menubar" class="navigation-list">
 						<li class="navigation-list__item" role="presentation">
@@ -32,9 +34,24 @@
 							<a href="contact.html" role="menuitem">Contact</a>
 						</li>
 					</ul>
+					<img class="hamburger" src="./images/hamburger.svg" />
 				</div>
 			</nav>
 		</header>
+		<ul class="menu-drop-down">
+			<li class="drop-down-item" role="presentation">
+				<a class="page__highlight" href="index.html" role="menuitem">Home</a>
+			</li>
+			<li class="drop-down-item" role="presentation">
+				<a href="about.html" role="menuitem">About me</a>
+			</li>
+			<li class="drop-down-item" role="presentation">
+				<a href="work.html" role="menuitem">Work</a>
+			</li>
+			<li class="drop-down-item" role="presentation">
+				<a href="contact.html" role="menuitem">Contact</a>
+			</li>
+		</ul>
 		<div class="body__profile">
 			<!-- Add portrait here -->
 			<img class="profile__item" src="./images/portraitkevinhurdt.jpeg" alt="a photo of Kevin Hurdt">
@@ -61,6 +78,7 @@
 			</div>
 		</footer>
 	</div>
+	<script src="./js/index.js"></script>
 </body>
 
 </html>

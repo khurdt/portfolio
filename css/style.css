@@ -74,6 +74,41 @@ textarea {
 	list-style-type: none;
 }
 
+.hamburger {
+	position: absolute;
+	border: none;
+	z-index: 100;
+	top: 1.3rem;
+	right: 1.3rem;
+	padding: 5px;
+	background: transparent;
+	cursor: pointer;
+	display: none;
+}
+
+.menu-drop-down {
+	list-style: none;
+	position: fixed;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	z-index: -100;
+	transform: translateY(-150%);
+	transition: transform 0.2s;
+	text-align: center;
+	background-color: #448caf;
+}
+
+.menu-drop-down.display {
+	transform: translateY(0%);
+	transition: all ease 0.2s;
+}
+
+.drop-down-item a {
+	text-decoration: none;
+}
+
 div.nav a {
 	text-decoration: none;
 	font: 20px 'Ubuntu', sans-serif;
@@ -127,12 +162,12 @@ div.decor a:hover:after {
 	display: grid;
 	grid-template-columns: 10% 90%;
 	position: sticky;
+	z-index: 100px;
 }
 
 .page-header__item:nth-child(1) {
 	height: 100px;
 	width: 100px;
-
 }
 
 .page-header__item:nth-child(2) {
