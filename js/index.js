@@ -1,21 +1,22 @@
-let header = document.querySelector('.page-header')
-let nav = document.querySelector('.navBar');
 let menu = document.querySelector('.hamburger');
 let dropDownMenu = document.querySelector('.menu-drop-down');
-
-if (window.innerWidth <= 600) {
-  nav.style.display = 'none';
-  menu.style.display = 'block';
-}
+let closeIcon = document.querySelector('.menu-close-icon');
+let container = document.querySelector('#container')
 
 menu.addEventListener('click', () => {
   toggleMenu();
 })
 
+closeIcon.addEventListener('click', () => {
+  toggleMenu();
+})
+
 function toggleMenu() {
-  if (dropDownMenu.classList.contains('display')) {
+  if (container.classList.contains('remove')) {
+    container.classList.remove('remove');
     dropDownMenu.classList.remove('display');
   } else {
     dropDownMenu.classList.add('display');
+    container.classList.add('remove');
   }
 }

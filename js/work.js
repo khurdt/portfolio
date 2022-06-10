@@ -87,94 +87,56 @@ let work = (function () {
   }
 
   function displayWork(project) {
-    let container = document.querySelector('#work');
-    let listWork = document.createElement('li');
-    let button = document.createElement('button');
-    let title = document.createElement('h4');
-    listWork.classList.add('list-item');
-    button.classList.add('grid__item');
-    button.style.backgroundImage = 'url(' + project.img + ')';
-    title.innerText = project.name;
-    listWork.appendChild(title);
-    listWork.appendChild(button);
-    container.appendChild(listWork);
+    let container = $('#work');
+    let listWork = $('<li class="list-item"></li>');
+    let button = $(`<button style="background-image: url('${project.img}');" class="grid__item"></button>`);
+    let title = $(`<h4>${project.name}</h4>`);
+    listWork.append(title);
+    listWork.append(button);
+    container.append(listWork);
 
-    button.addEventListener('click', () => {
-      displayDetails(project);
-      toggleModal();
+    button.on('click', () => {
+      showModal(project)
+      // displayDetails(project);
+      // toggleModal();
     })
   }
 
-  let modal = document.querySelector('#control-container');
-  let closeIcon = document.querySelector('.close-icon');
 
-  function displayDetails(project) {
-    modal.innerHTML = '';
+  function showModal(project) {
+    let maxWidth = (window.innerWidth);
+    let modal = $(`#modal-container`);
+    modal.css({ maxWidth: maxWidth })
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
+    let modalFooter = $('.modal-footer')
 
-    closeIcon = document.createElement('img');
-    closeIcon.classList.add('close-icon');
-    closeIcon.src = './images/close-icon.png';
+    modalTitle.empty();
+    modalBody.empty();
+    modalFooter.empty();
 
-    let listDetails = document.createElement('div');
-    listDetails.classList.add('modal-list')
+    let pokemonTitle = $('<h1 class="text-capitalize">' + project.name + '</h1>')
+    let pokemonImage = $('<img style="width:30%;display:grid;margin: auto;">');
+    pokemonImage.attr('src', project.modalimg);
 
-    let modalImg = document.createElement('img');
-    modalImg.classList.add('modal-item');
-    modalImg.src = project.modalimg;
+    //display details in  a grid
+    let detailsList = $('<li style="list-style-type: none;"></li>');
+    let pokemonInfo = $(`<p style="margin:10px;">${project.description}</p>`);
 
-    let projectLink = document.createElement('a');
-    projectLink.classList.add('modal-item');
-    let viewLink = document.createTextNode("See Project Now");
-    projectLink.appendChild(viewLink);
-    projectLink.href = project.view;
-    projectLink.target = '_blank';
+    let seeProject = $(`<button href=${project.view} type="button" class="btn btn-secondary">See Project</button>`);
+    let seeGitHub = $(`<button href=${project.github} type="button" class="btn btn-secondary">See GitHub</button>`);
+    let close = $('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>')
 
-    let githubLink = document.createElement('a');
-    githubLink.classList.add('modal-item');
-    let gitLink = document.createTextNode("See GitHub");
-    githubLink.appendChild(gitLink);
-    githubLink.href = project.github;
-    githubLink.target = '_blank';
+    modalTitle.append(pokemonTitle);
+    modalBody.append(pokemonImage)
+    modalBody.append(detailsList);
+    detailsList.append(pokemonInfo);
+    modalFooter.append(seeProject);
+    modalFooter.append(seeGitHub);
+    modalFooter.append(close);
 
-    let paragraph = document.createElement('p');
-    paragraph.classList.add('modal-item');
-    paragraph.innerText = project.description;
-
-    listDetails.appendChild(modalImg);
-    listDetails.appendChild(paragraph);
-    listDetails.appendChild(projectLink);
-    listDetails.appendChild(githubLink);
-    modal.appendChild(closeIcon);
-    modal.appendChild(listDetails);
-
-    closeIcon.addEventListener('click', () => {
-      toggleModal();
-    })
+    modal.modal();
   }
-
-  function toggleModal() {
-    if (modal.classList.contains('display')) {
-      modal.classList.remove('display');
-      closeIcon.style.display = 'none';
-    } else {
-      modal.classList.add('display');
-      closeIcon.style.display = 'block';
-    }
-  }
-
-  //hide modal if escape is clicked on keyboard
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('display')) {
-      modal.classList.remove('display');
-    }
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('display')) {
-      modal.classList.remove('display');
-    }
-  });
-
 
   function getAll() {
     return projectList;
@@ -183,7 +145,7 @@ let work = (function () {
   return {
     loadWork: loadWork,
     displayWork: displayWork,
-    displayDetails: displayDetails,
+    showModal: showModal,
     getAll: getAll
   }
 
@@ -211,3 +173,70 @@ work.getAll().forEach(function (project) {
 // 4) A link to the live, hosted version of your app (if possible). If you don’t have a live version, include screenshots that show the app’s functionality or a recording of your app in use.
 // 5) A list of the technologies used for each project (React, CSS etc. — again, you can pull this from your README file).
 // 6) Any other relevant materials you created for the project; for example, user flows, user stories, and/or a Kanban board. Be sure to explain how you worked with these materials during the project.
+
+// function displayDetails(project) {
+//   modal.innerHTML = '';
+
+//   closeIcon = document.createElement('img');
+//   closeIcon.classList.add('close-icon');
+//   closeIcon.src = './images/close-icon.png';
+
+//   let listDetails = document.createElement('div');
+//   listDetails.classList.add('modal-list')
+
+//   let modalImg = document.createElement('img');
+//   modalImg.classList.add('modal-item');
+//   modalImg.src = project.modalimg;
+
+//   let projectLink = document.createElement('a');
+//   projectLink.classList.add('modal-item');
+//   let viewLink = document.createTextNode("See Project Now");
+//   projectLink.appendChild(viewLink);
+//   projectLink.href = project.view;
+//   projectLink.target = '_blank';
+
+//   let githubLink = document.createElement('a');
+//   githubLink.classList.add('modal-item');
+//   let gitLink = document.createTextNode("See GitHub");
+//   githubLink.appendChild(gitLink);
+//   githubLink.href = project.github;
+//   githubLink.target = '_blank';
+
+//   let paragraph = document.createElement('p');
+//   paragraph.classList.add('modal-item');
+//   paragraph.innerText = project.description;
+
+//   listDetails.appendChild(modalImg);
+//   listDetails.appendChild(paragraph);
+//   listDetails.appendChild(projectLink);
+//   listDetails.appendChild(githubLink);
+//   modal.appendChild(closeIcon);
+//   modal.appendChild(listDetails);
+
+//   closeIcon.addEventListener('click', () => {
+//     toggleModal();
+//   })
+// }
+
+// function toggleModal() {
+//   if (modal.classList.contains('display')) {
+//     modal.classList.remove('display');
+//     closeIcon.style.display = 'none';
+//   } else {
+//     modal.classList.add('display');
+//     closeIcon.style.display = 'block';
+//   }
+// }
+
+// //hide modal if escape is clicked on keyboard
+// window.addEventListener('keydown', (e) => {
+//   if (e.key === 'Escape' && modal.classList.contains('display')) {
+//     modal.classList.remove('display');
+//   }
+// });
+
+// window.addEventListener('keydown', (e) => {
+//   if (e.key === 'Escape' && modal.classList.contains('display')) {
+//     modal.classList.remove('display');
+//   }
+// });

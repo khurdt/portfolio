@@ -13,11 +13,11 @@
 </head>
 
 <body>
-	<div class="container">
+	<div id="container">
 		<header class="page-header">
 			<!-- Add logo here -->
 			<img class="page-header__item" src="./images/logo.png" alt="logo with title name Kevin Hurdt">
-			<nav class="page-header__item">
+			<nav class="page-header__item navBar">
 				<div class="nav decor">
 					<ul role="menubar" class="navigation-list">
 						<li class="navigation-list__item" role="presentation">
@@ -34,8 +34,8 @@
 						</li>
 					</ul>
 				</div>
-				<img class="hamburger" src="./images/hamburger.svg" />
 			</nav>
+			<img class="hamburger" src="./images/hamburger.svg" />
 		</header>
 		<div class="about__container">
 			<div class="about-info">
@@ -121,6 +121,23 @@
 				<label for="linkedin">LinkedIn</label>
 			</div>
 		</footer>
+	</div>
+	<div class="menu-drop-down">
+		<img class="menu-close-icon" src="./images/close-icon.png" />
+		<ul class="menu-drop-down-grid">
+			<li class="drop-down-item" role="presentation">
+				<a href="index.html" role="menuitem">Home</a>
+			</li>
+			<li class="drop-down-item" role="presentation">
+				<a class="page__highlight" href="about.html" role="menuitem">About me</a>
+			</li>
+			<li class="drop-down-item" role="presentation">
+				<a href="work.html" role="menuitem">Work</a>
+			</li>
+			<li class="drop-down-item" role="presentation">
+				<a href="contact.html" role="menuitem">Contact</a>
+			</li>
+		</ul>
 	</div>
 	<script src="./js/index.js"></script>
 </body>
