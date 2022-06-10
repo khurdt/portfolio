@@ -20,6 +20,7 @@ ul {
 	z-index: 100;
 	transform: translateX(0);
 	transition: all ease 0.6s;
+	background-color: #cacaca;
 }
 
 #container.remove {
@@ -53,19 +54,12 @@ ul {
 .menu-drop-down {
 	list-style: none;
 	position: absolute;
-	transform: translateX(100%);
-	transition: all ease 0.6s;
 	right: 0;
 	left: 0;
 	bottom: 0;
 	top: 0;
 	background-color: #448caf;
 	z-index: 99;
-}
-
-.menu-drop-down.display {
-	transform: translateX(0);
-	transition: all ease 0.6s;
 }
 
 .menu-drop-down-grid {
@@ -78,6 +72,7 @@ ul {
 
 .drop-down-item a {
 	text-decoration: none;
+	font-size: 25px;
 }
 
 .drop-down-item {

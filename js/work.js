@@ -45,8 +45,6 @@ let work = (function () {
     {
       name: 'Pokedex App',
       github: 'https://github.com/khurdt/pokedex.github.io',
-      github2: 'https://khurdt.github.io/portfolio/work.html',
-      github2title: 'No API',
       view: 'https://khurdt.github.io/pokedex.github.io/',
       description: 'An app that fetches pokemon from an API and displays its image and information within a modal. This app was built using vanilla javascript, HTML5, and CSS. The main learning curve was manipulating the DOM via javascript and implementing the search bar, and learning how to access data from api.',
       img: './images/pokedex.png',
@@ -55,8 +53,6 @@ let work = (function () {
     {
       name: 'Drawing App',
       github: 'github__link" href="https://github.com/khurdt/drawing.app.github.io',
-      github2: 'https://khurdt.github.io/portfolio/work.html',
-      github2title: 'No API',
       view: 'https://khurdt.github.io/drawing-app.github.io/',
       description: 'An app for drawing on a blank canvas with different colors, multiple width sizes, and mirror or quardrant lines. This app utilized HTML5 canvas.',
       img: './images/drawing.png',
@@ -65,8 +61,6 @@ let work = (function () {
     {
       name: 'To Do List App',
       github: 'github__link" href="https://github.com/khurdt/to-do-list.app.github.io',
-      github2: 'https://khurdt.github.io/portfolio/work.html',
-      github2title: 'No API',
       view: 'https://khurdt.github.io/to-do-list-app.github.io/',
       description: 'An app that displays a list from the provided input and allows you to highlight, cross out, or delete items. This app utilized JQuery instead of vanilla javascript.',
       img: './images/todolist.png',
@@ -97,40 +91,36 @@ let work = (function () {
 
     button.on('click', () => {
       showModal(project)
-      // displayDetails(project);
-      // toggleModal();
     })
   }
 
 
   function showModal(project) {
-    let maxWidth = (window.innerWidth);
     let modal = $(`#modal-container`);
-    modal.css({ maxWidth: maxWidth })
     let modalBody = $('.modal-body');
     let modalTitle = $('.modal-title');
-    let modalFooter = $('.modal-footer')
+    let modalFooter = $('.modal-footer');
 
     modalTitle.empty();
     modalBody.empty();
     modalFooter.empty();
 
-    let pokemonTitle = $('<h1 class="text-capitalize">' + project.name + '</h1>')
-    let pokemonImage = $('<img style="width:30%;display:grid;margin: auto;">');
-    pokemonImage.attr('src', project.modalimg);
+    let projectTitle = $('<h1 class="text-capitalize">' + project.name + '</h1>')
+    let modalImage = $('<img style="width:30%;display:grid;margin: auto;">');
+    modalImage.attr('src', project.modalimg);
 
     //display details in  a grid
     let detailsList = $('<li style="list-style-type: none;"></li>');
-    let pokemonInfo = $(`<p style="margin:10px;">${project.description}</p>`);
+    let modalInfo = $(`<p style="margin:10px;">${project.description}</p>`);
 
-    let seeProject = $(`<button href=${project.view} type="button" class="btn btn-secondary">See Project</button>`);
-    let seeGitHub = $(`<button href=${project.github} type="button" class="btn btn-secondary">See GitHub</button>`);
+    let seeProject = $(`<a type="button" target="_blank" class="btn btn-secondary" style="text-decoration: none; margin-right: auto;" href="${project.view}">See Project</a>`);
+    let seeGitHub = $(`<a type="button" target="_blank" class="btn btn-secondary" style="text-decoration: none; margin-right: auto;" href="${project.github}">See GitHub</a>`);
     let close = $('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>')
 
-    modalTitle.append(pokemonTitle);
-    modalBody.append(pokemonImage)
+    modalTitle.append(projectTitle);
+    modalBody.append(modalImage)
     modalBody.append(detailsList);
-    detailsList.append(pokemonInfo);
+    detailsList.append(modalInfo);
     modalFooter.append(seeProject);
     modalFooter.append(seeGitHub);
     modalFooter.append(close);

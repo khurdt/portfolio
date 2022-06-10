@@ -14,9 +14,7 @@ closeIcon.addEventListener('click', () => {
 function toggleMenu() {
   if (container.classList.contains('remove')) {
     container.classList.remove('remove');
-    dropDownMenu.classList.remove('display');
   } else {
-    dropDownMenu.classList.add('display');
     container.classList.add('remove');
   }
 }
