@@ -351,11 +351,15 @@ td {
 }
 
 .projects {
+	padding-left: 20px;
 	text-align: left;
-	margin: 10px;
 }
 
-/*work css--------------------------------------------------*/
+.language {
+	font-size: 20px;
+}
+
+/*---------------work css--------------------------------------------------*/
 
 .work__title {
 	background-color: white;

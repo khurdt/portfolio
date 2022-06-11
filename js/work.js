@@ -46,8 +46,8 @@ let work = (function () {
       github: 'https://github.com/khurdt/movie-app-api',
       view: 'https://kh-movie-app.herokuapp.com',
       whatIsIt: 'Server and Database for serving movie data to the React and Angular Movie Apps;',
-      how: 'Built using Node, Express, and Mongo. Also utilized Mongoose middleware for model schemas and Passport middleware for generating and authenticating JWT token. Also used Bycrypt middleware to hashing password and authenticating hashed password. Testing endpoints with Postman.',
-      challenges: 'Learning how to create endpoints and manipulate the data with the mongo language, and implementing the JWT token.',
+      how: 'Built using Node, Express, and Mongo. Also utilized Mongoose middleware for model schemas and Passport middleware for generating and authenticating JSON Web Token(JWT) token. Also used Bycrypt middleware to hashing password and authenticating hashed password. Testing endpoints with Postman.',
+      challenges: 'Learning how to create endpoints and manipulate the data with the mongo language, and implementing the JSON Web Token(JWT) token.',
       img: './images/server.jpg',
       modalImg: './images/database.png'
     },
@@ -56,7 +56,7 @@ let work = (function () {
       github: 'https://github.com/khurdt/pokedex.github.io',
       view: 'https://khurdt.github.io/pokedex.github.io/',
       whatIsIt: 'An app that fetches pokemon from an API and displays its image and information within a modal.',
-      how: 'This app was built using Vanilla Javascript, HTML5, and CSS.',
+      how: 'This app was built using Vanilla Javascript, HTML5, and Cascading Style Sheets.',
       challenges: 'The main learning curve was manipulating the DOM via Javascript and implementing the search bar, and learning how to access data from api.',
       img: './images/pokedex.png',
       modalImg: './images/venusaur.png'
@@ -66,7 +66,7 @@ let work = (function () {
       github: 'github__link" href="https://github.com/khurdt/drawing.app.github.io',
       view: 'https://khurdt.github.io/drawing-app.github.io/',
       whatIsIt: 'An app for drawing on a blank canvas with different colors, multiple width sizes, and mirror or quardrant lines.',
-      how: 'This app utilized HTML5 canvas, Vanilla Javascript, and CSS',
+      how: 'This app utilized HTML5 canvas, Vanilla Javascript, and Cascading Style Sheets',
       challenges: 'Learning the canvas language and how to draw multiple lines at the same time',
       img: './images/drawing.png',
       modalImg: './images/color1.png'
@@ -76,7 +76,7 @@ let work = (function () {
       github: 'github__link" href="https://github.com/khurdt/to-do-list.app.github.io',
       view: 'https://khurdt.github.io/to-do-list-app.github.io/',
       whatIsIt: 'An app that displays a list from the provided input and allows you to highlight, cross out, or delete items.',
-      how: 'This app utilized JQuery, HTML5, and CSS.',
+      how: 'This app utilized JQuery, HTML5, and Cascading Style Sheets.',
       challenges: 'Learning the JQuery language which was found to be much simpler than Vanilla Javascript',
       img: './images/todolist.png',
       modalImg: './images/todolist (1).png'
