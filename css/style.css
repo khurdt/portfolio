@@ -283,7 +283,7 @@ footer {
 	animation: grow 1s forwards;
 }
 
-/*aboutme css--------------------------------------------*/
+/*--------------------------aboutme css--------------------------------------------*/
 
 .about__title {
 	background-color: white;
@@ -302,22 +302,27 @@ footer {
 	grid-gap: 30px;
 }
 
+/* image */
 .aboutme__item:nth-child(1) {
 	margin: auto;
 	max-width: 500px;
 	padding-top: 20px;
 }
 
+/* table */
 .aboutme__item:nth-child(2) {
 	text-align: center;
 	margin: auto;
 }
 
+/* cover letter */
 .aboutme__item:nth-child(3) {
 	margin: auto;
+	padding: 10px;
 }
 
 table {
+	margin: 10px;
 	background: black;
 	text-align: center;
 	border: 3px solid black;
@@ -343,6 +348,11 @@ td {
 	border-radius: 5px;
 	padding: 10px;
 	box-shadow: 4px 4px 6px 0 rgba(30, 60, 80, 0.30);
+}
+
+.projects {
+	text-align: left;
+	margin: 10px;
 }
 
 /*work css--------------------------------------------------*/
