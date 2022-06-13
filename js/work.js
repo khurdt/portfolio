@@ -6,7 +6,7 @@ let work = (function () {
       github: 'https://github.com/khurdt/movie-app-angular-client',
       view: 'https://khurdt.github.io/movie-app-angular-client',
       whatIsIt: 'An app that displays movies based on its existing server-side code (REST API and database), and allows you to see information about each movie, its genre and director. One can create an account and collect their personal favorite movies and delete them.',
-      how: `This app utitlized "Angular" for its client-side technology and "typedoc" for the supporting documentation. I used Angular Material to aid me in implementing CSS, Angular Routing was implemented, as well as a "service" for all my endpoint api calls.`,
+      how: `This app utitlized "Angular" for its client-side technology and "typedoc" for the supporting documentation. I used Angular Material to aid me in implementing CSS, Angular Routing was implemented, as well as a "service" for all my endpoint https calls.`,
       challenges: 'Learning Angular Material and how it effected the rest of the css. Also converting API data in order to display all user likes for each movie.',
       img: './images/angularFlix.png',
       modalImg: './images/angular.png'
@@ -18,7 +18,7 @@ let work = (function () {
       whatIsIt: 'An app to to be able to send texts, images, and current location.',
       how: 'This app utilized React-Native by using "Expo" for making universal native apps for Android, iOS, and the web with JavaScript and React, "Firebase" as its real-time database, and "Gifted Chat" as its Chat UI.',
       challenges: 'One of the issues faced was implementing external libraries to be able to pick a photo from library, take a photo, get current location, and send it through Gifted Chat.',
-      img: './images/chat-app.png',
+      img: './images/chat.png',
       modalImg: './images/holding-phone.png'
     },
     {
