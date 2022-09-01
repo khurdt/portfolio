@@ -1,0 +1,2 @@
+let menu=document.querySelector(".hamburger"),dropDownMenu=document.querySelector(".menu-drop-down"),closeIcon=document.querySelector(".menu-close-icon"),container=document.querySelector("#container");function toggleMenu(){container.classList.contains("remove")?container.classList.remove("remove"):container.classList.add("remove")}menu.addEventListener("click",(()=>{toggleMenu()})),closeIcon.addEventListener("click",(()=>{toggleMenu()}));
+//# sourceMappingURL=contact.918ed607.js.map
