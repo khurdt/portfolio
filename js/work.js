@@ -91,16 +91,16 @@ let work = (function () {
       img: './images/drawing.png',
       modalImg: './images/color1.png'
     },
-    {
-      name: 'To Do List App',
-      github: 'github__link" href="https://github.com/khurdt/to-do-list.app.github.io',
-      view: 'https://khurdt.github.io/to-do-list-app.github.io/',
-      whatIsIt: 'An app that displays a list from the provided input and allows you to highlight, cross out, or delete items.',
-      how: 'This app utilized JQuery, HTML5, and Cascading Style Sheets.',
-      challenges: 'Learning the JQuery language which was found to be much simpler than Vanilla Javascript',
-      img: './images/todolist.png',
-      modalImg: './images/todolist (1).png'
-    },
+    // {
+    //   name: 'To Do List App',
+    //   github: 'github__link" href="https://github.com/khurdt/to-do-list.app.github.io',
+    //   view: 'https://khurdt.github.io/to-do-list-app.github.io/',
+    //   whatIsIt: 'An app that displays a list from the provided input and allows you to highlight, cross out, or delete items.',
+    //   how: 'This app utilized JQuery, HTML5, and Cascading Style Sheets.',
+    //   challenges: 'Learning the JQuery language which was found to be much simpler than Vanilla Javascript',
+    //   img: './images/todolist.png',
+    //   modalImg: './images/todolist (1).png'
+    // },
   ];
 
   let project;
