@@ -12,6 +12,16 @@ let work = (function () {
       modalImg: './images/dewittModal.png'
     },
     {
+      name: 'Simple Games',
+      github: 'https://github.com/khurdt/simple-games',
+      view: 'https://khurdt.github.io/simple-games/',
+      whatIsIt: 'An app that allows you to play simple games like tic tac toe whether by yourself or with another person.',
+      how: `originally written in vanilla javascript and then transformed to React`,
+      challenges: 'Learning how to keep track of the score of each player and implementing the AI',
+      img: './images/simpleGames.png',
+      modalImg: './images/simpleGamesModal.png'
+    },
+    {
       name: 'Angular Movie Info App',
       github: 'https://github.com/khurdt/movie-app-angular-client',
       view: 'https://khurdt.github.io/movie-app-angular-client',
