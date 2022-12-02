@@ -184,7 +184,6 @@ work.getAll().forEach(function (project) {
   work.displayWork(project);
 });
 
-export default myProjects = work.getAll();
 
 
 // Update your portfolio to include your new project. Be sure to add the hosted version, the GitHub repository, a screenshot,
