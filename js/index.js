@@ -1,7 +1,12 @@
+import myProjects from './work';
+
 let menu = document.querySelector('.hamburger');
 let dropDownMenu = document.querySelector('.menu-drop-down');
 let closeIcon = document.querySelector('.menu-close-icon');
-let container = document.querySelector('#container')
+let container = document.querySelector('#container');
+let allProjects = document.querySelectorAll('.allProjects')
+
+allProjects.append(`${myProjects().length} projects`);
 
 menu.addEventListener('click', () => {
   toggleMenu();

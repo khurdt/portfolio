@@ -2,6 +2,16 @@ let work = (function () {
 
   let projectList = [
     {
+      name: 'McCoy DeWitt, LLC(general contractor) Website',
+      github: 'https://github.com/khurdt/McCoy-DeWitt-Client',
+      view: 'https://www.mccoydewitt.com/',
+      whatIsIt: 'An app that allows you to create a project with a general contractor where you get to see your project`s status, upload photos, and add insurance information.',
+      how: `This app utilizes Cloudinary to store images for each Project and using the MERN(Mongo, Express, React, Node.js) technology stack`,
+      challenges: 'Learning how to use Cloudinary and GitHub workflows',
+      img: './images/dewitt.png',
+      modalImg: './images/dewittModal.png'
+    },
+    {
       name: 'Angular Movie Info App',
       github: 'https://github.com/khurdt/movie-app-angular-client',
       view: 'https://khurdt.github.io/movie-app-angular-client',
@@ -165,7 +175,7 @@ let work = (function () {
     loadWork: loadWork,
     displayWork: displayWork,
     showModal: showModal,
-    getAll: getAll
+    getAll: getAll,
   }
 
 })();
@@ -173,6 +183,8 @@ let work = (function () {
 work.getAll().forEach(function (project) {
   work.displayWork(project);
 });
+
+export default myProjects = work.getAll();
 
 
 // Update your portfolio to include your new project. Be sure to add the hosted version, the GitHub repository, a screenshot,
